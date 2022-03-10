@@ -1,0 +1,16 @@
+Flask~=2.0.1
+requests~=2.26.0
+JSON
+random
+Flask
+requests
+JSON
+random
+flask_sqlalchemy
+flask_migrate
+flask_restful
+
+SQLAlchemy~=1.3.10
+
+
+SQLAlchemy~=1.3.10
