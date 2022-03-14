@@ -6,7 +6,7 @@
 |Jessie|Designment manager|[parkjessie](https://github.com/parkjessie)|[Tasks](https://github.com/parkjessie/LAJ/issues/parkjessie)|[Commits](https://github.com/parkjessie/LAJ/commit/d87734489af2cbf2f577893d20521df5d4be8cc8)|[Jessie Journal](https://github.com/parkjessie/LAJ/wiki/Jessie's-CB-Journal)|
 |Leah|Github admin|[leahsaph123](https://github.com/parkjessie/LAJ/commit/a505c2773b87f63aec1764719bd37e5f4b6031bb)|[Tasks](n/a)|[Commits](n/a)|[Leah's Journal](n/a)|
 |Allie|Scrum Master|[xiaoa0](https://github.com/xiaoa0)|[Tasks](n/a)|[Commits](n/a)|[Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit)|
-|Michael|Deployment manager|[n/a]()|[Tasks]()|[Commits]()|[Michael's Journal]()|
+|Michael|Deployment manager|[michaelScopic](https://github.com/michaelScopic)|[Tasks]()|[Commits]()|[Michael's Journal]()|
 ***
 Sponsor: Mr. Mortensen
 - Combination of a canvas calendar and scrum board
