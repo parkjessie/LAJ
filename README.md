@@ -1,12 +1,12 @@
 # LAJ
 
 ## Time box
-|Contributor|Github ID/Profile|Assigned Tasks|Commits|Pair Journal|
-|------|---------------------------|-----|--------|-----------------------------------|
-|Jessie|[parkjessie](https://github.com/parkjessie)|[Tasks](n/a)|[Commits](https://github.com/parkjessie/LAJ/commit/d87734489af2cbf2f577893d20521df5d4be8cc8)|[Jessie Journal](https://github.com/parkjessie/LAJ/wiki/Jessie's-CB-Journal)|
-|Leah|[leahsaph123](https://github.com/parkjessie/LAJ/commit/a505c2773b87f63aec1764719bd37e5f4b6031bb)|[Tasks](n/a)|[Commits](n/a)|[Leah's Journal](n/a)|
-|Allie|[xiaoa0](https://github.com/xiaoa0)|[Tasks](n/a)|[Commits](n/a)|[Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit)|
-|Micheal|[n/a]()|[Tasks]()|[Commits]()|[Michael's Journal]()|
+|Contributor|Roles|Github ID/Profile|Assigned Tasks|Commits|Pair Journal|
+|------||--------|---------------------------|-----|--------|-----------------------------------|
+|Jessie|Designment manager|[parkjessie](https://github.com/parkjessie)|[Tasks](n/a)|[Commits](https://github.com/parkjessie/LAJ/commit/d87734489af2cbf2f577893d20521df5d4be8cc8)|[Jessie Journal](https://github.com/parkjessie/LAJ/wiki/Jessie's-CB-Journal)|
+|Leah|Github admin|[leahsaph123](https://github.com/parkjessie/LAJ/commit/a505c2773b87f63aec1764719bd37e5f4b6031bb)|[Tasks](n/a)|[Commits](n/a)|[Leah's Journal](n/a)|
+|Allie|Scrum Master|[xiaoa0](https://github.com/xiaoa0)|[Tasks](n/a)|[Commits](n/a)|[Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit)|
+|Micheal|Deployment manager|[n/a]()|[Tasks]()|[Commits]()|[Michael's Journal]()|
 ***
 
 - Combination of a canvas calendar and scrum board
