@@ -1,6 +1,6 @@
 # LAJ
 
-##Time box
+## Time box
 |Contributor|Github ID/Profile|Assigned Tasks|Commits|Pair Journal|
 |------|---------------------------|-----|--------|-----------------------------------|
 |Jessie|[parkjessie](https://github.com/parkjessie)|[Tasks](n/a)|[Commits](https://github.com/parkjessie/LAJ/commit/d87734489af2cbf2f577893d20521df5d4be8cc8)|[Jessie Journal](https://github.com/parkjessie/LAJ/wiki/Jessie's-CB-Journal)|
