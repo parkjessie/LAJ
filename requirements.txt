@@ -1,11 +1,11 @@
 Flask~=2.0.1
 requests~=2.26.0
-JSON
-random
+#JSON   #JSON and random are not packages, also why are there duplicates of stuff? - Michael
+#random
 Flask
 requests
-JSON
-random
+#JSON
+#random
 flask_sqlalchemy
 flask_migrate
 flask_restful
