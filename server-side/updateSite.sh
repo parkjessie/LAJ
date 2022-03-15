@@ -22,19 +22,19 @@ then
   # If the exit code of 'git pull' is "0" (0 means the command was successful), we
   # will restart our service with 'systemctl'
   echo "$(tput setaf 2) --- 'git pull' was successful. Trying to restart service file... --- $(tput sgr 0)"
-  sudo systemctl restart $SERVICE_FILE
+  sudo systemctl restart $project_systemd_file
   if [ "$?" == "0" ]
   then 
-    # If the exit code of 'sudo systemctl restart $SERVICE_FILE' is 0, we will ask 
-    # user if they want to check the status of $SERVICE_FILE
-    read -p "$(tput setaf 1) --- Do you want to see the status of $SERVICE_FILE? This could be useful for debugging or making sure everything is all good. [Y/n] --- $(tput sgr 0)" SERVICE_FILE_STATUS
-    if [ "$SERVICE_FILE_STATUS" == "y" ] || [ "$SERVICE_FILE_STATUS" == " "] 
+    # If the exit code of 'sudo systemctl restart $project_systemd_file' is 0, we will ask 
+    # user if they want to check the status of $project_systemd_file
+    read -p "$(tput setaf 1) --- Do you want to see the status of $project_systemd_file? This could be useful for debugging or making sure everything is all good. [Y/n] --- $(tput sgr 0)" project_systemd_file_STATUS
+    if [ "$project_systemd_file_STATUS" == "y" ] || [ "$project_systemd_file_STATUS" == " "] 
     then
         # If the user answered "y" or just pressed the enter key, we will display the
         # status of $SERVICE FILE
-        systemctl status $SERVICE_FILE_STATUS
+        systemctl status $project_systemd_file_STATUS
     else
-        # If the user answered "n" to the question, we will not show the status of $SERVICE_FILE
+        # If the user answered "n" to the question, we will not show the status of $project_systemd_file
         echo "$(tput setaf 3) --- Ok, will not show the status of the file... --- $(tput sgr 0)"
     fi
   fi
