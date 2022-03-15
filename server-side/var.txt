@@ -1,0 +1,1 @@
+# Place to set variables for ./updateSite.sh
