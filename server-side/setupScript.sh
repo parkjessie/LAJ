@@ -24,7 +24,7 @@ while : ; do    # loops forever until user enters "y"
 done
 
 touch var.txt 
-echo "set \$PROJECT_DIR=$PROJECT_DIR" >> var.txt
+echo "set \$PROJECT_DIR=$PROJECT_DIR" > var.txt
 
 sleep 0.5
 
@@ -35,3 +35,12 @@ echo "$(tput setaf 2)
 # $(tput sgr 0) (Example: MySite.service or FOSSite.service) # $(tput setaf 2)
 ################################################# $(tput sgr 0)
 "
+while : ; do 
+    read -p  "Enter your project's directory here: " project_systemd_file
+    echo "$(tput setaf 3) You entered: $(tput sgr 0) $project_systemd_file"
+    read -p "Is this correct? [y/n]: " confirm1
+    [[ "$confirm1" != "y" ]] || break    
+done
+
+echo "set \$project_systemd_file=$project_systemd_file" > var.txt
+
