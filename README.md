@@ -8,7 +8,8 @@
 |Allie|Scrum Master|[xiaoa0](https://github.com/xiaoa0)|[Tasks](n/a)|[Commits](n/a)|[Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit)|
 |Michael|Deployment manager|[michaelScopic](https://github.com/michaelScopic)|[Tasks]()|[Commits]()|[Michael's Journal]()|
 ***
-Sponsor: Mr. Mortensen
+Sponsor: Mr. Mortensen, jmortenson@powayusd.com
+
 - Combination of a canvas calendar and scrum board
 - Login feature to allow for collaboration within groups and for each person to have a role (TO, OO, scrum master, etc)
 - Checkboxes for complete tasks, better than canvas because you can check off individual tasks and  include steps to complete those tasks, ie: 
