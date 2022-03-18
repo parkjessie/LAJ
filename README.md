@@ -9,7 +9,7 @@
 |Michael|Deployment manager|[michaelScopic](https://github.com/michaelScopic)|[Tasks](https://github.com/parkjessie/LAJ/issues/assigned/michaelScopic)|[Commits](https://github.com/parkjessie/LAJ/commits?author=michaelScopic)|[Michael's Journal]()|
 
 ## Sponsor: Mrs. Rowe, attendance office, [email](srowe@powayusd.com)
-[specifics about meeting](parkjessie.github.io/LAJ/meetingwithrowe)
+<a href="https://parkjessie.github.io/LAJ/meetingwithrowe">meeting specifics</a>
 ### would like to automate contact tracing:
 - pull from synergy to a doc
 - if reason for abscence is covid then pull info to docs
