@@ -7,7 +7,7 @@
 |Leah|Github admin|[leahsaph123](https://github.com/parkjessie/LAJ/commit/a505c2773b87f63aec1764719bd37e5f4b6031bb)|[Tasks](https://github.com/parkjessie/LAJ/issues/assigned/leahsaph123)|[Commits](https://github.com/parkjessie/LAJ/commits?author=leahsaph123)|[Leah's Journal](https://leahsaph123.github.io/tri3_individ/CBnotes)|[Github Pages](https://leahsaph123.github.io/tri3_individ/)
 |Allie|Scrum Master|[xiaoa0](https://github.com/xiaoa0)|[Tasks](https://github.com/parkjessie/LAJ/issues/assigned/xiaoa0)|[Commits](https://github.com/parkjessie/LAJ/commits?author=xiaoa0)|[Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit)|[Github Pages](https://xiaoa0.github.io/Data-Structures/)
 |Michael|Deployment manager|[michaelScopic](https://github.com/michaelScopic)|[Tasks](https://github.com/parkjessie/LAJ/issues/assigned/michaelScopic)|[Commits](https://github.com/parkjessie/LAJ/commits?author=michaelScopic)|[Michael's Journal]()|
-***
+
 Sponsor: Mr. Mortensen, jmortensen@powayusd.com
 
 - Combination of a canvas calendar and scrum board
