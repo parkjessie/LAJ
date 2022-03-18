@@ -8,6 +8,19 @@
 |Allie|Scrum Master|[xiaoa0](https://github.com/xiaoa0)|[Tasks](https://github.com/parkjessie/LAJ/issues/assigned/xiaoa0)|[Commits](https://github.com/parkjessie/LAJ/commits?author=xiaoa0)|[Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit)|[Github Pages](https://xiaoa0.github.io/Data-Structures/)
 |Michael|Deployment manager|[michaelScopic](https://github.com/michaelScopic)|[Tasks](https://github.com/parkjessie/LAJ/issues/assigned/michaelScopic)|[Commits](https://github.com/parkjessie/LAJ/commits?author=michaelScopic)|[Michael's Journal]()|
 
+## Sponsor: Mrs. Rowe, attendance office, [email](srowe@powayusd.com)
+[specifics about meeting](parkjessie.github.io/LAJ/meetingwithrowe)
+### would like to automate contact tracing:
+- pull from synergy to a doc
+- if reason for abscence is covid then pull info to docs
+- automate contact to teachers, 
+- how do they know what students to contact? automate this too (teacher could select names of people close to person with covid and then that sends info to parents)
+- student calls out for covid, pull info on teachers, contact teachers, pull info on students, get parent email, contact parents
+
+
+
+
+# most likely not doing what is below
 Sponsor: Mr. Mortensen, jmortensen@powayusd.com
 
 - Combination of a canvas calendar and scrum board
