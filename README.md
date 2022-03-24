@@ -1,6 +1,8 @@
 # LAJ
 
-## Time box
+## Time box  
+
+
 |Contributor|Roles|Github ID/Profile|Assigned Tasks|Commits|Pair Journal|Individual Github Pages|
 |------|--------|---------------------------|-----|--------|-----------------------------------|-----------------------------------|
 |Jessie|Designment manager|[parkjessie](https://github.com/parkjessie)|[Tasks](https://github.com/parkjessie/LAJ/issues/parkjessie)|[Commits](https://github.com/parkjessie/LAJ/commit/d87734489af2cbf2f577893d20521df5d4be8cc8)|[Jessie Journal](https://github.com/parkjessie/LAJ/wiki/Jessie's-CB-Journal)|[Github Pages](https://parkjessie.github.io/New-repo/)
