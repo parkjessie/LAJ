@@ -2,7 +2,6 @@
 
 ## Time box  
 
-
 | Contributor | Roles | Github ID/Profile | Assigned Tasks | Commits | Pair Journal | Individual Github Pages |
 | ------ | -------- | -------------------- | ------------- | ------- | ------------ | ---------------------- |
 | Jessie | Design manager | [parkjessie](https://github.com/parkjessie) | [Tasks](https://github.com/parkjessie/LAJ/issues/parkjessie) | [Commits](https://github.com/parkjessie/LAJ/commit/d87734489af2cbf2f577893d20521df5d4be8cc8) | [Jessie Journal](https://github.com/parkjessie/LAJ/wiki/Jessie's-CB-Journal) | [Github Pages](https://parkjessie.github.io/New-repo/) |
@@ -12,12 +11,15 @@
 
 ## Sponsor: Mrs. Rowe (attendance office), [email](srowe@powayusd.com)
 <a href="https://parkjessie.github.io/LAJ/meetingwithrowe">Initial meeting notes</a>
+
+[Wireframes](https://docs.google.com/presentation/d/1Ge9VXNSYFEYB0OJj6q9HI7FPfTbjSKOkbj_SC5APzYE/edit?usp=sharing)
 ### Plan: automate COVID contact tracing
 Process:
 - Pull student data from Synergy to Google Doc/Sheet
 - If reason for abscence is COVID then pull info to docs
 - Automate email to teachers, give them form (with dropdown menu?) to select students who were in close contact
 - After form submission program pulls parents' emails from student info, notify parents
+
 
 
 # most likely not doing what is below
