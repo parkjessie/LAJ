@@ -22,3 +22,18 @@ Process:
 
 ![](https://github.com/parkjessie/LAJ/blob/main/Web%20capture_25-3-2022_113223_docs.google.com.jpeg)
 ![](https://github.com/parkjessie/LAJ/blob/main/Web%20capture_25-3-2022_113322_docs.google.com.jpeg)
+
+# Contributing/committing
+### **PULL BEFORE YOU PUSH** (to avoid any oopie doopies)
+Don't commit a file that you didn't do anything to (just don't).
+
+`.repil` files should **NOT** be pushed
+
+### Committing sequence
+`$ git add file` (replace `file` with whatever file you want to commit) 
+
+`$ git pull` (or your IDE's equivalent)
+
+`$ git push` (or your IDE's equivalent)
+
+`$ git commit` (or your IDE's equivalent)
