@@ -23,9 +23,9 @@ while : ; do    # loops forever until user enters "y"
     [[ "$confirm" != "y" ]] || break    # breaks loop with "y" 
 done
 
-touch ~/LAJ/server-side/var.txt
-
-echo "export \$PROJECT_DIR=$PROJECT_DIR" > ~/LAJ/server-side/var.txt
+touch ~/LAJ/server-side/var.sh
+echo "#!/bin/bash" > ~/LAJ/server-side/var.sh
+echo "set \$PROJECT_DIR=$PROJECT_DIR" >> ~/LAJ/server-side/var.sh
 
 sleep 0.5
 
@@ -43,6 +43,6 @@ while : ; do
     [[ "$confirm1" != "y" ]] || break    
 done
 
-echo "export \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> ~/LAJ/server-side/var.txt
+echo "set \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> ~/LAJ/server-side/var.sh
 
 exit

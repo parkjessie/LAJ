@@ -3,12 +3,12 @@
 # !!! This script is to help automate updating our website !!!
 
 # --- Sourcing the variables from var.txt ---
-export ~/LAJ/server-side/var.txt 
+source ~/LAJ/server-side/var.txt 
 
 # --- Checking variables from var.txt ---
 echo "
-$(tput setaf 1) !!! Your \$PROJECT_DIR is set to: $(tput sgr 0)$PROJECT_DIR 
-$(tput setaf 1) !!! Your \$PROJECT_SYSTEMD_FILE is set to: $(tput sgr 0)$PROJECT_SYSTEMD_FILE  $(tput sgr 0)"
+$(tput setaf 1) !!! \$PROJECT_DIR is set as: $(tput sgr 0)$PROJECT_DIR 
+$(tput setaf 1) !!! \$PROJECT_SYSTEMD_FILE is set as: $(tput sgr 0)$PROJECT_SYSTEMD_FILE  $(tput sgr 0)"
 
 read -p "Is this correct? [Y/n]: " confirm1
 
@@ -19,7 +19,6 @@ else
   echo "Please re-run the setup script and set the varables correctly."
   exit
 fi
-
 
 # --- Beginning the actual script ---
 set $PREVIOUS_DIR=$(pwd)
