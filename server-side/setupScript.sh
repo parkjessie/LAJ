@@ -42,6 +42,6 @@ while : ; do
     [[ "$confirm1" != "y" ]] || break    
 done
 
-echo "set \$project_systemd_file=$PROJECT_SYSTEMD_FILE" >> var.txt
+echo "set \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> var.txt
 
 exit
