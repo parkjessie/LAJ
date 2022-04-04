@@ -12,9 +12,10 @@ set $PREVIOUS_DIR=$(pwd)
 echo "$(tput setaf 3) --- Current dir is: $PREVIOUS_DIR --- $(tput sgr 0)"
 
 # --- Change directory to the project directory --- 
-cd $PROJECT_DIR && echo "$(tput setaf 3) --- Changed dir to /home/ubuntu/FOSSite/ --- $(tput sgr 0)" 
+cd $PROJECT_DIR && echo "$(tput setaf 3) --- Changed dir to $PROJECT_DIR --- $(tput sgr 0)" 
 
-git pull  # -- Does 'git pull' --
+# -- 
+git pull  
 EXIT_CODE=$?
 
 # -- Assigns "$EXIT_CODE" to the exit code of the previous command 
