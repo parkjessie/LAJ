@@ -25,7 +25,7 @@ done
 
 touch ~/LAJ/server-side/var.txt
 
-echo "set \$PROJECT_DIR=$PROJECT_DIR" > ~/LAJ/server-side/var.txt
+echo "export \$PROJECT_DIR=$PROJECT_DIR" > ~/LAJ/server-side/var.txt
 
 sleep 0.5
 
@@ -43,6 +43,6 @@ while : ; do
     [[ "$confirm1" != "y" ]] || break    
 done
 
-echo "set \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> ~/LAJ/server-side/var.txt
+echo "export \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> ~/LAJ/server-side/var.txt
 
 exit

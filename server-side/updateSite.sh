@@ -3,7 +3,7 @@
 # !!! This script is to help automate updating our website !!!
 
 # --- Sourcing the variables from var.txt ---
-source ~/LAJ/server-side/var.txt 
+export ~/LAJ/server-side/var.txt 
 
 # --- Checking variables from var.txt ---
 echo "
