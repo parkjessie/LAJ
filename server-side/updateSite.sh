@@ -1,5 +1,7 @@
 #!/bin/bash 
 
+# !!! This script is to help automate updating our website !!!
+
 # --- Sourcing the variables from var.txt ---
 source var.txt 
 
@@ -33,7 +35,6 @@ then
   # -- If the exit code of 'git pull' is "0" 
   # (0 means the command was successful), we will restart our
   # service with 'systemctl' --
-
   echo "$(tput setaf 2) --- 'git pull' was successful. Trying to restart service file... --- $(tput sgr 0)"
   sudo systemctl restart $project_systemd_file
   if [ "$?" == "0" ]
@@ -45,8 +46,8 @@ then
     read -p "$(tput setaf 1) --- Do you want to see the status of $PROJECT_SYSTEMD_FILE? This could be useful for debugging or making sure everything is all good. [Y/n] --- $(tput sgr 0) SYSTEMD_FILE_STATUS
     if [ "$SYSTEMD_FILE_STATUS" == "y" ] || [ "$SYSTEMD_FILE_STATUS" == " "] 
     then
-        # -- If the user answered "y" or just pressed 
-        # the enter key, we will display the status of $PROJECT_SYSTEMD_FILE FILE --
+        # -- If the user answered "y" or just pressed the enter key,
+        # we will display the status of $PROJECT_SYSTEMD_FILE FILE --
 
         systemctl status $SYTEMD_FILE_STATUS
     else

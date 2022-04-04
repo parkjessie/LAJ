@@ -24,7 +24,7 @@ while : ; do    # loops forever until user enters "y"
 done
 
 touch var.txt 
-echo "set \$PROJECT_DIR=$PROJECT_DIR" >> var.txt
+echo "set \$PROJECT_DIR=$PROJECT_DIR" > var.txt
 
 sleep 0.5
 
