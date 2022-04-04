@@ -23,8 +23,9 @@ while : ; do    # loops forever until user enters "y"
     [[ "$confirm" != "y" ]] || break    # breaks loop with "y" 
 done
 
-touch var.txt 
-echo "set \$PROJECT_DIR=$PROJECT_DIR" > var.txt
+touch ~/LAJ/server-side/var.txt
+
+echo "set \$PROJECT_DIR=$PROJECT_DIR" > ~/LAJ/server-side/var.txt
 
 sleep 0.5
 
@@ -32,16 +33,16 @@ sleep 0.5
 echo "$(tput setaf 2) 
 #################################################
 #  Now please enter the systemd file            #
-# $(tput sgr 0) (Example: MySite.service or FOSSite.service) # $(tput setaf 2)
+# $(tput sgr 0) (Example: MySite.service or FOSSite.service) $(tput setaf 2)# 
 ################################################# $(tput sgr 0)
 "
 while : ; do 
-    read -p  "Enter your project's directory here: " PROJECT_SYSTEMD_FILE
+    read -p  "Enter your project's systemd service file here: " PROJECT_SYSTEMD_FILE
     echo "$(tput setaf 3) You entered: $(tput sgr 0) $PROJECT_SYSTEMD_FILE"
     read -p "Is this correct? [y/n]: " confirm1
     [[ "$confirm1" != "y" ]] || break    
 done
 
-echo "set \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> var.txt
+echo "set \$PROJECT_SYSTEMD_FILE=$PROJECT_SYSTEMD_FILE" >> ~/LAJ/server-side/var.txt
 
 exit

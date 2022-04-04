@@ -3,11 +3,23 @@
 # !!! This script is to help automate updating our website !!!
 
 # --- Sourcing the variables from var.txt ---
-source var.txt 
+source ~/LAJ/server-side/var.txt 
 
 # --- Checking variables from var.txt ---
-echo $PROJECT_DIR
-echo $PROJECT_SYSTEMD_FILE
+echo "
+$(tput setaf 1) !!! Your \$PROJECT_DIR is set to: $(tput sgr 0)$PROJECT_DIR 
+$(tput setaf 1) !!! Your \$PROJECT_SYSTEMD_FILE is set to: $(tput sgr 0)$PROJECT_SYSTEMD_FILE  $(tput sgr 0)"
+
+read -p "Is this correct? [Y/n]: " confirm1
+
+if [ "$confirm1" == "y" ] || [ "$confirm1" == " " ]
+then
+  echo "Ok, continuing with the rest of the script..."
+else 
+  echo "Please re-run the setup script and set the varables correctly."
+  exit
+fi
+
 
 # --- Beginning the actual script ---
 set $PREVIOUS_DIR=$(pwd)
@@ -61,11 +73,11 @@ else
   # -- If the exit code is NOT 0, we will just echo 
   # this text and exit the if-statement -- 
 
-  echo "$(tput setab 1) --- Could not complete 'git pull'... :( --- $(tput sgr 0)"        
+  echo "$(tput setab 1) --- Could not complete 'git pull'... --- $(tput sgr 0)"        
 fi
 
 cd $PREVIOUS_DIR && echo "$(tput setaf 3) --- Changed dir back to $PREVIOUS_DIR --- $(tput sgr 0)" 
-echo "$(tput setab 5) --- Done! --- $(tput sgr 0)"
+echo $(tput setab 5) --- Done! --- $(tput sgr 0)
 
 # -- Changes back into the directory that the user was in 
 # before they ran this script, then exits the entire script --
