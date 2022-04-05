@@ -3,7 +3,7 @@
 # !!! This script is to help automate updating our website !!!
 
 # --- Sourcing the variables from var.txt ---
-source ~/LAJ/server-side/var.txt 
+. ~/LAJ/server-side/var.txt 
 
 # --- Checking variables from var.txt ---
 echo "
@@ -47,10 +47,10 @@ then
   # (0 means the command was successful), we will restart our
   # service with 'systemctl' --
   echo "$(tput setaf 2) --- 'git pull' was successful. Trying to restart service file... --- $(tput sgr 0)"
-  sudo systemctl restart $project_systemd_file
+  sudo systemctl restart $PROJECT_SYSTEMD_FILE
   if [ "$?" == "0" ]
   then 
-    # -- If the exit code of 'sudo systemctl restart $project_systemd_file'
+    # -- If the exit code of 'sudo systemctl restart $PROJECT_SYSTEMD_FILE'
     # is 0, we will ask user if they want to check the 
     # status of $PROJECT_SYSTEMD_FILE --
 
@@ -62,15 +62,15 @@ then
 
         systemctl status $SYTEMD_FILE_STATUS
     else
-        # --If the user answered "n" to the question, 
-        # we will not show the status of $project_systemd_file --
+        # -- [If the user answered "n" to the question, 
+        # we will not show the status of $PROJECT_SYSTEMD_FILE --
 
         echo "$(tput setaf 3) --- Ok, will not show the status of the file... --- $(tput sgr 0)"
     fi
   fi
 else
-  # -- If the exit code is NOT 0, we will just echo 
-  # this text and exit the if-statement -- 
+  # -- [If the exit code is NOT 0, we will just echo 
+  # this text and exit the if-statement] -- 
 
   echo "$(tput setab 1) --- Could not complete 'git pull'... --- $(tput sgr 0)"        
 fi
@@ -78,7 +78,7 @@ fi
 cd $PREVIOUS_DIR && echo "$(tput setaf 3) --- Changed dir back to $PREVIOUS_DIR --- $(tput sgr 0)" 
 echo $(tput setab 5) --- Done! --- $(tput sgr 0)
 
-# -- Changes back into the directory that the user was in 
-# before they ran this script, then exits the entire script --
+# -- [Changes back into the directory that the user was in 
+# before they ran this script, then exits the entire script] --
 
 exit
