@@ -30,10 +30,10 @@ Don't commit a file that you didn't do anything to (just don't).
 `.repil` and any IDE config files should **NOT** be pushed
 
 ### Committing sequence
-`$ git add file` (replace `file` with whatever file you want to commit) 
+$ `git add file` (replace `file` with whatever file you want to commit) 
 
-`$ git pull` (or your IDE's equivalent)
+$ `git pull` (or your IDE's equivalent)
 
-`$ git push` (or your IDE's equivalent)
+$ `git push` (or your IDE's equivalent)
 
-`$ git commit` (or your IDE's equivalent)
+$ `git commit` (or your IDE's equivalent)
