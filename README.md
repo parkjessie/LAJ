@@ -27,7 +27,7 @@ Process:
 ### **PULL BEFORE YOU PUSH** (to avoid any oopie doopies)
 Don't commit a file that you didn't do anything to (just don't).
 
-`.repil` files should **NOT** be pushed
+`.repil` and any IDE config files should **NOT** be pushed
 
 ### Committing sequence
 `$ git add file` (replace `file` with whatever file you want to commit) 
