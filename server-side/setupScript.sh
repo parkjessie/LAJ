@@ -35,7 +35,7 @@ echo "$(tput setaf 4)--- Set \$PROJECT_DIR as '$PROJECT_DIR' in '.var.sh' ---$(t
 # - [End of setting up $PROJECT_DIR in '.var.sh] -
 
 # - [End of setting up project directory] -
-sleep 0.5
+sleep 1
 
 # --- [Systemd service file setup] ---
 echo "$(tput setaf 2) 
@@ -55,4 +55,6 @@ echo "set \$PROJECT_SYSTEMD_FILE = '$PROJECT_SYSTEMD_FILE'" >> .var.sh
 echo "$(tput setaf 4)--- Set \$PROJECT_SYSTEMD_FILE as '$PROJECT_SYSTEMD_FILE' in '.var.sh' ---$(tput sgr 0)"
 # --- [End of systemd service file setup] ---
 
+echo "$(tput setaf 2)--- Done setting up the variables, exiting the script... --- $(tput sgr 0)"
+sleep 1
 exit
