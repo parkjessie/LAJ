@@ -6,14 +6,9 @@ from crudy.app_crud_api import app_crud_api
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 
-
-
 @app.route('/')
 def index():
     return render_template("index.html")
-
-
-
 
 
 if __name__ == "__main__":
