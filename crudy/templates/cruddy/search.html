@@ -1,14 +1,13 @@
-<!DOCTYPE html>
 <!-- Preparing search using asynchronous "fetch" (no page reload, no wait)
 inspiration from https://www.youtube.com/watch?v=QKcVjdLEX_s
 -->
-{% extends "layout.html" %}
+{% extends "layouts/base.html" %}
 
 {% block meta %}
     <title>SQL search</title>
 {% endblock %}
 
-{% block content %}
+{% block body %}
     <div class="container py-4 bg-primary">
         <!-- heading -->
         <header class="pb-3 mb-4 border-bottom">

@@ -63,13 +63,21 @@ def crud_authorize():
     # show the auth user page if the above fails for some reason
     return render_template("authorize.html")
 
+@app_crud.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    print("logged out")
+    return redirect(url_for('crud.crud_login'))
+    # check if logged in
+    # if logged in, log out
 
 # CRUD create/add
 @app_crud.route('/create/', methods=["POST"])
 def create():
     """gets data from form and add it to Users table"""
     if request.form:
-        po = users(
+        po = user(
             request.form.get("name"),
             request.form.get("email"),
             request.form.get("password"),
@@ -119,6 +127,7 @@ def delete():
 
 # Search Form
 @app_crud.route('/search/')
+@login_required
 def search():
     """loads form to search Users data"""
     return render_template("search.html")
