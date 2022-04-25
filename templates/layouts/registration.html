@@ -183,7 +183,7 @@
     <form name='registration' onsubmit="return formValidation();">
         <ul>
             <table style="border-width: thick">
-                <tr><td><li><label>User id:</label></li></td>
+                <tr><td><li><label>Student id:</label></li></td>
                     <td><li><input type="text" id="userid" size="12" /></li></td>
                 </tr>
                 <tr><td><li><label>Password:</label></li></td>
@@ -195,24 +195,20 @@
                 <tr><td><li><label>Address:</label></li></td>
                     <td><li><input type="text" id="address" size="50" /></li></td>
                 </tr>
-                <tr><td><li><label>Country:</label></li></td>
+                <tr><td><li><label>Reason for absence:</label></li></td>
                     <td><li><select id="country">
-                        <option selected="" value="Default">(Please select a country)</option>
-                        <option value="AF">Australia</option>
-                        <option value="AL">Canada</option>
-                        <option value="DZ">India</option>
-                        <option value="AS">Russia</option>
-                        <option value="AD">USA</option>
+                        <option selected="" value="Default">(Please select an option)</option>
+                        <option value="AF">Covid-19</option>
+                        <option value="AL">Travel</option>
+                        <option value="DZ">Illness(rather than Covid-19)</option>
+                        <option value="AS">School activity</option>
+                        <option value="AD">Other</option>
                     </select></li></td>
                 </tr>
                 <tr><td><li><label>ZIP Code:</label></li></td>
                     <td><li><input type="text" id="zip" /></li></td>
                 </tr>
-                <tr><td><li><label>Language:</label></li></td>
-                    <td><li><input type="checkbox" name="en" value="en" checked /><span>English</span></li>
-                        <li><input type="checkbox" name="nonen" value="noen" /><span>Non English</span></li></td>
-                </tr>
-                <tr><td><li><label for="desc">About:</label></li></td>
+                <tr><td><li><label for="desc">If you chose Covid-19, please indicate students who were near you for every period of class:</label></li></td>
                     <td><li><textarea name="desc" id="desc"></textarea></li></td>
                 </tr>
                 <tr><td></td>
