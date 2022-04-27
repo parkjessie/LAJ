@@ -18,12 +18,12 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
                     </li>
-
+{#add links to navbar for login, signup, search, and logout#}
                     <a class="nav-link" href={{ url_for('crud.crud') }}>Login <span class="sr-only"></span></a>
                     <a class="nav-link" href={{ url_for('crud.crud_authorize') }}>Sign Up <span class="sr-only"></span></a>
                     <a class="nav-link" href={{ url_for('crud.search') }}>Search <span class="sr-only"></span></a>
+                    <a class="nav-link" href={{ url_for('registration') }}>Registration<span class="sr-only"></span></a>
                     <a class="nav-link" href={{ url_for('crud.logout') }}>Logout<span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('registration') }}>registration<span class="sr-only"></span></a>
 
 
 
