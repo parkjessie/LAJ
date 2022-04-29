@@ -34,6 +34,4 @@ Don't commit a file that you didn't do anything to.
 
 `$ git pull` (or your IDE's equivalent)
 
-`$ git commit` (or your IDE's equivalent)
-
-`$ git push` (usually IDEs commit and push do you might not need to do that)
+`$ git commit && git push` (or your IDE's equivalent)
