@@ -6,15 +6,23 @@ from crudy.app_crud_api import app_crud_api
 app.register_blueprint(app_crud)
 app.register_blueprint(app_crud_api)
 
+
 @app.route('/')
 def index():
     return render_template("index.html")
+
 
 @app.route('/registration')
 def registration():
     return render_template("layouts/registration.html")
 
+@app.route('/planner')
+def planner():
+    return render_template("layouts/planner.html")
+
+
+
 
 if __name__ == "__main__":
     # runs the application on the repl development server
-    app.run(debug=True, port="5003")
+    app.run(debug=True, port="5004")
