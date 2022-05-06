@@ -66,8 +66,8 @@ def crud_authorize():
 @app_crud.route('/logout')
 @login_required
 def logout():
-    logout_user()
-    print("logged out")
+    logout_user() # logs user out
+    print("logged out") # error checking to ensure log out happened
     return redirect(url_for('crud.crud_login'))
     # check if logged in
     # if logged in, log out

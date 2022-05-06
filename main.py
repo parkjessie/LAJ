@@ -1,4 +1,6 @@
 from flask import render_template
+from flask_login import login_required
+
 from __init__ import app
 from crudy.app_crud import app_crud
 from crudy.app_crud_api import app_crud_api
@@ -13,8 +15,9 @@ def index():
 
 
 @app.route('/registration')
+@login_required
 def registration():
-    return render_template("layouts/registration.html")
+    return render_template("registration.html")
 
 @app.route('/planner')
 def planner():
