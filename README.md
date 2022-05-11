@@ -14,14 +14,8 @@
 
 [Wireframes](https://docs.google.com/presentation/d/1Ge9VXNSYFEYB0OJj6q9HI7FPfTbjSKOkbj_SC5APzYE/edit?usp=sharing)
 ### Plan: 4-year high school planning
-Process:
-- Pull student data from Synergy to Google Doc/Sheet
-- If reason for abscence is COVID then pull info to docs
-- Automate email to teachers, give them form (with dropdown menu?) to select students who were in close contact
-- After form submission program pulls parents' emails from student info, notify parents
-
-![](https://github.com/parkjessie/LAJ/blob/main/Web%20capture_25-3-2022_113223_docs.google.com.jpeg)
-![](https://github.com/parkjessie/LAJ/blob/main/Web%20capture_25-3-2022_113322_docs.google.com.jpeg)
+- Database with all information on courses (provided by sponsor)
+- Calculator for student to select courses for all 4 years, check graduation and A-G requirements
 
 # Contributing/committing
 ### **PULL BEFORE YOU PUSH** (to avoid any oopie doopies)
