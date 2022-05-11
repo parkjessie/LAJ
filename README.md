@@ -14,8 +14,9 @@
 
 [Wireframes](https://docs.google.com/presentation/d/1Ge9VXNSYFEYB0OJj6q9HI7FPfTbjSKOkbj_SC5APzYE/edit?usp=sharing)
 ### Plan: 4-year high school planning
-- Database with all information on courses (provided by sponsor)
+- Database with all information on course paths (provided by sponsor)
 - Calculator for student to select courses for all 4 years, check graduation and A-G requirements
+- Include prerequisites
 
 # Contributing/committing
 ### **PULL BEFORE YOU PUSH** (to avoid any oopie doopies)
