@@ -9,11 +9,11 @@
 | Allie | Scrum Master | [xiaoa0](https://github.com/xiaoa0) | [Tasks](https://github.com/parkjessie/LAJ/issues/assigned/xiaoa0) | [Commits](https://github.com/parkjessie/LAJ/commits?author=xiaoa0) | [Allie's Journal](https://docs.google.com/document/d/1huWsfI7-3COuK45SiUF5_T3DFpNmcoGLhiiLbFigpsU/edit) | [Github Pages](https://xiaoa0.github.io/Data-Structures/) |
 | Michael | Deployment manager | [michaelScopic](https://github.com/michaelScopic) | [Tasks](https://github.com/parkjessie/LAJ/issues/assigned/michaelScopic) | [Commits](https://github.com/parkjessie/LAJ/commits?author=michaelScopic) | [Michael's Journal](https://www.youtube.com/watch?v=dQw4w9WgXcQ) | [Github Pages]() |
 
-## Sponsor: Mrs. Rowe (attendance office), [email](srowe@powayusd.com)
+## Sponsor: Mr. Eveleth (assistant principal), [email](teveleth@powayusd.com)
 <a href="https://parkjessie.github.io/LAJ/meetingwithrowe">Initial meeting notes</a>
 
 [Wireframes](https://docs.google.com/presentation/d/1Ge9VXNSYFEYB0OJj6q9HI7FPfTbjSKOkbj_SC5APzYE/edit?usp=sharing)
-### Plan: automate COVID contact tracing
+### Plan: 4-year high school planning
 Process:
 - Pull student data from Synergy to Google Doc/Sheet
 - If reason for abscence is COVID then pull info to docs
