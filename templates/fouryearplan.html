@@ -1,0 +1,63 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+<table style="alignment: center; border: black">
+    <tr id="headers">
+        <th>Subjects</th>
+        <th>9th Grade</th>
+        <th>10th Grade</th>
+        <th>11th Grade</th>
+        <th>12th Grade</th>
+        <th>Totals</th>
+    </tr>
+    <tr id="history">
+        <td>History- 30 credits for 3 years</td>
+        <td>n/a</td>
+        <td>AP European History or World History?</td>
+        <td>AP US History or US History</td>
+        <td>AP Government or Civics and Economics</td>
+        <td>Total- (insert math where it counts both history credits and potential elective credits from APs</td>
+    </tr>
+    <tr id="English">
+        <td>English- 40 credits or 4 years</td>
+        <td>Honors High School English 1-2 or High School English 1-2</td>
+        <td>Honors Humanities 1-2 or High School English 3-4</td>
+        <td>AP English or American Literature or ...</td>
+        <td>AP English or World Lit or Expos or ...</td>
+    </tr>
+    <tr id="Math">
+        <td>Math- 20 credits or 4 trimesters</td>
+        <td></td>
+    </tr>
+</table>
+
+    <script>
+    {#is there an easier way to get a database of all courses at DN????, rather than manually typing each one into a database, do i need any more info?#}
+    courses = [
+        {
+            subject: "elec",
+            course_title: "3D Computer Animation 1",
+            prerequisites: false,
+            grade: [9, 10, 11, 12]
+        },
+        {
+            subject: "elec",
+            course_title: "3D Computer Animation 2",
+            prerequisites: "3D Computer Animation 1",
+            grade: [9, 10, 11, 12]
+        },
+        {
+            subject: "elec",
+            course_title: "3D Computer Animation 3",
+            prerequisites: ["3D Computer Animation 1", "3D Computer Animation 2"],
+            grade: [9, 10, 11, 12]
+        },
+        {
+            subject: "elec",
+            course_title: "3D Computer Animation 4",
+            prerequisites: ["3D Computer Animation 1", "3D Computer Animation 2", "3D Computer Animation 3"],
+            grade: [10, 11, 12]
+        }
+    ]
+    </script>
+{% endblock %}

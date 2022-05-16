@@ -13,6 +13,9 @@ app.register_blueprint(app_crud_api)
 def index():
     return render_template("index.html")
 
+@app.route('/fouryearplan')
+def fouryearplan():
+    return render_template("fouryearplan.html")
 
 @app.route('/registration')
 @login_required
