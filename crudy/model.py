@@ -16,16 +16,22 @@ from flask_login import UserMixin
 
 def load_data():
     db.create_all()
+    # got the database from admin and then converted it into a csv file
     data = "courses.csv"
+    # takes csv file and stores data into a variable
     with open(data, newline='') as f:
         reader = csv.reader(f)
         results = list(reader)
-    for result in results:
-        c = Courses(result)  # takes a row out of results
-        c.create()  # creates a row in the database
-    # courses = Courses.query
-    # for course in courses:
-    #     print(course.read())
+    # results.remove(0)
+    # takes data and makes each result a separate row in the database
+    for index, result in enumerate(results):
+        # skips first and last row so that database doesn't include headers or totals from csv
+        if index != 0 and index != len(results) - 1:
+            c = Courses(result)  # takes a row out of results
+            c.create()  # creates a row in the database
+    courses = Courses.query
+    for course in courses:
+        print(course.read())
 
 
 class Courses(db.Model):
@@ -62,8 +68,8 @@ class Courses(db.Model):
     def read(self):
         return {
             "department": self.dept,
-            "course name": self.title,
-            "course id": self.courseid,
+            "course_name": self.title,
+            "course_id": self.courseid,
             "freshman": self.ninth,
             "sophomore": self.tenth,
             "junior": self.eleventh,
