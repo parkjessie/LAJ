@@ -26,6 +26,10 @@ def registration():
 def planner():
     return render_template("layouts/planner.html")
 
+@app.route('/info')
+def info():
+    return render_template("layouts/info.html")
+
 
 
 
