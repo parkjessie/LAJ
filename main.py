@@ -22,17 +22,16 @@ def fouryearplan():
 def registration():
     return render_template("registration.html")
 
-@app.route('/planner')
-def planner():
-    return render_template("layouts/planner.html")
 
 @app.route('/info')
 def info():
     return render_template("layouts/info.html")
 
-
+@app.route('/math')
+def math():
+    return render_template("layouts/math.html")
 
 
 if __name__ == "__main__":
     # runs the application on the repl development server
-    app.run(debug=True, port="5004")
+    app.run(debug=True, port="5005")
