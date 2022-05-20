@@ -17,12 +17,6 @@ def index():
 def fouryearplan():
     return render_template("fouryearplan.html")
 
-@app.route('/registration')
-@login_required
-def registration():
-    return render_template("registration.html")
-
-
 @app.route('/info')
 def info():
     return render_template("layouts/info.html")

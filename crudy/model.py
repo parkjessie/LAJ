@@ -68,8 +68,8 @@ class Courses(db.Model):
     def read(self):
         return {
             "department": self.dept,
-            "course name": self.title,
-            "course id": self.courseid,
+            "course_name": self.title,
+            "course_id": self.courseid,
             "freshman": self.ninth,
             "sophomore": self.tenth,
             "junior": self.eleventh,

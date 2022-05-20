@@ -18,15 +18,33 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="/">Home <span class="sr-only"></span></a>
                     </li>
-                    <a class="nav-link" href={{ url_for('crud.crud') }}>Testing <span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('crud.crud_login') }}>Login <span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('crud.crud_authorize') }}>Sign Up <span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('crud.search') }}>Search <span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('crud.logout') }}>Logout<span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('registration') }}>Registration<span class="sr-only"></span></a>
+
+                    <a class="nav-link" href={{ url_for('crud.crud') }}>Course List <span class="sr-only"></span></a>
                     <a class="nav-link" href={{ url_for('fouryearplan') }}>Course Planner<span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('info') }}>More Info<span class="sr-only"></span></a>
-                    <a class="nav-link" href={{ url_for('math') }}>math<span class="sr-only"></span></a>
+                    <a class="nav-link" href={{ url_for('crud.search') }}>Search <span class="sr-only"></span></a>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Resources
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <a class="nav-link" href={{ url_for('info') }}>More Info<span class="sr-only"></span></a>
+                            <a class="nav-link" href={{ url_for('math') }}>Math Paths<span class="sr-only"></span></a>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Account
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                            <a class="nav-link" href={{ url_for('crud.crud_login') }}>Login <span class="sr-only"></span></a>
+                            <a class="nav-link" href={{ url_for('crud.crud_authorize') }}>Sign Up <span class="sr-only"></span></a>
+                        </ul>
+                    </li>
+
+
+                    <a class="nav-link" href={{ url_for('crud.logout') }}>Logout<span class="sr-only"></span></a>
 
 
                     <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
