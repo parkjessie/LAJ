@@ -1,17 +1,24 @@
 {% extends "layouts/base.html" %}
 
 {% block body %}
-<table style="alignment: center; border: black">
+    <style>
+        th, td {
+            border: 1px solid black;
+            text-align: center;
+        }
+    </style>
+
+<table id="course-select">
     <tr id="headers">
         <th>Subjects</th>
         <th>9th Grade</th>
         <th>10th Grade</th>
         <th>11th Grade</th>
         <th>12th Grade</th>
-        <th>Totals</th>
+        <th>Total Credits for Each Catergory</th>
     </tr>
     <tr id="history">
-        <td>History- 30 credits for 3 years</td>
+        <td>History- 30 credits or 3 years</td>
         <td>n/a</td>
         <td>AP European History or World History?</td>
         <td>AP US History or US History</td>
@@ -20,44 +27,117 @@
     </tr>
     <tr id="English">
         <td>English- 40 credits or 4 years</td>
-        <td>Honors High School English 1-2 or High School English 1-2</td>
-        <td>Honors Humanities 1-2 or High School English 3-4</td>
+        <td><form>
+            <select id = "freshman-english" onchange = "freshmanEnglish()" >
+                <option value="1"> ---Choose 9th Grade English--- </option>
+                <option value="2"> Honors High School English 1-2 </option>
+                <option value="3"> High School English 1-2 </option>
+            </select>
+        </form></td>
+        <td>
+            <form>
+                <select id="soph-english" onchange="sophEnglish()">
+                    <option value="1">---Choose 10th Grade English---</option>
+                    <option value="2">Honors Humanities 1-2</option>
+                    <option value="3">High School English 3-4</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-english-retake" onchange="sophRetakeEnglish">
+                    <option value="1">---Retake?---</option>
+                    <option value="2">N/A</option>
+                    <option value="3"> Honors High School English 1-2 </option>
+                    <option value="4"> High School English 1-2 </option>
+                </select>
+            </form>
+        </td>
         <td>AP English or American Literature or ...</td>
         <td>AP English or World Lit or Expos or ...</td>
+        <td> </td>
     </tr>
     <tr id="Math">
-        <td>Math- 20 credits or 4 trimesters</td>
+        <td>Math- 20 credits or 2 years</td>
         <td></td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
+    </tr>
+    <tr id="science">
+        <td>Science- 20 credits or 2 years, 1 year biology, 1 year chemistry or physics </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
+    </tr>
+    <tr id="flang-fine">
+        <td>Foreign Language or Fine Art- 5 credits or 1 trimester</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
+    </tr>
+    <tr id="visart">
+        <td>Visual or Performing Arts- 5 credits or 1 trimester</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
+    </tr>
+    <tr id="pe">
+        <td>PE- 20 PE and 5 Health Credits (ENS 1-2-3 + 2 trimesters)</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
+    </tr>
+    <tr id="electives">
+        <td>Electives- 85 credits- 5 credits/trimester</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+    </tr>
+    <tr id="offrolls">
+        <td>Offrolls- max of 1 per trimester, except 12th grade</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr id="total-per-year">
+        <td>Total- 15 classes per year</td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+        <td> </td>
+
     </tr>
 </table>
 
     <script>
-    {#is there an easier way to get a database of all courses at DN????, rather than manually typing each one into a database, do i need any more info?#}
-    courses = [
-        {
-            subject: "elec",
-            course_title: "3D Computer Animation 1",
-            prerequisites: false,
-            grade: [9, 10, 11, 12]
-        },
-        {
-            subject: "elec",
-            course_title: "3D Computer Animation 2",
-            prerequisites: "3D Computer Animation 1",
-            grade: [9, 10, 11, 12]
-        },
-        {
-            subject: "elec",
-            course_title: "3D Computer Animation 3",
-            prerequisites: ["3D Computer Animation 1", "3D Computer Animation 2"],
-            grade: [9, 10, 11, 12]
-        },
-        {
-            subject: "elec",
-            course_title: "3D Computer Animation 4",
-            prerequisites: ["3D Computer Animation 1", "3D Computer Animation 2", "3D Computer Animation 3"],
-            grade: [10, 11, 12]
+        function freshmanEnglish() {
+            var nineEnglish = document.getElementById("freshman-english");
+            var value = nineEnglish.options[nineEnglish.selectedIndex].value;
+            console.log("value is:" + value)
+            var text = nineEnglish.options[nineEnglish.selectedIndex].text;
+            console.log("text is:" + text)
         }
-    ]
+
+        function sophEnglish() {
+            var tenEnglish = document.getElementById("soph-english")
+        }
     </script>
 {% endblock %}

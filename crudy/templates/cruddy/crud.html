@@ -40,12 +40,6 @@
                             <tbody>
                             <!-- Loop through rows in table -->
                             {% for row in table %}
-                                <!--
-                                Prepare table for display
-                                    caution: phone number needs "~" format step to force type to string
-                                -->
-{#                                {% set pn = "" ~ row['phone'] %}#}
-{#                                {% set pnf = "(" ~ pn[0:3] ~ ")" ~ pn[3:6] ~ "-" ~ pn[6:10] %}#}
                                 <tr>
                                     <td>{{ row['department'] }}</td>
                                     <td>{{ row['course_name'] }}</td>

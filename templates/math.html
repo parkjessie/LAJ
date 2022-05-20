@@ -1,21 +1,12 @@
-<!DOCTYPE html>
 {% extends "layouts/base.html" %}
-<html lang="en">
-
-
 
 {% block body %}
-    <body>
-
     <script>
-
         function cond(){
             const classList = ["Math Accel", "Int. 1A", "Int 1B", "Int 2A", "Int 2B", "Trig", "Int. 3A", "Int. 3B", "AFA 1", "AFA 2", "Pre-Calc 1", "AP Calc AB 1", "AP Calc AB 2", "Pre-Calc 2", "AP Calc BC 1", "AP Calc BC 2", "AP Stats 1", "AP Stats 2", "AP Stats 3", "You're cracked at math", "Select a Class"]
             const dropdownPick = parseInt(document.getElementById("input1").value);
             document.getElementById("selection").innerHTML = classList[dropdownPick + 1];
-
         }
-
     </script>
 
     <div class="center">
@@ -194,6 +185,10 @@
 
     <p id="selection" class="answer"> </p>
 
+    <br>
+    <input type="text" placeholder="Do you want to print this page?" id="wish">
+    <button type="button" onclick="cond()">Submit</button>
+
     {#        <script>#}
     {#            function cond(){#}
     {#                let a = document.getElementById("wish").value;#}
@@ -210,9 +205,6 @@
     {#            }#}
     {#        </script>#}
 
-    </body>
-
-
     <style>
         body,html,
         body {
@@ -221,15 +213,6 @@
         .center {
             text-align: center;
         }
-    </style>
-    </body>
-    <body>
-    <br>
-    <input type="text" placeholder="Do you want to print this page?" id="wish">
-    <button type="button" onclick="cond()">Submit</button>
-
-    </body>
-    <style>
         table, td, th {
             border: 1px solid whitesmoke;
         }
@@ -251,11 +234,7 @@
 
         body {
             background: #0e440e;
-        }
-        body {
             color: #ffffff;
         }
     </style>
 {% endblock %}
-
-</html>

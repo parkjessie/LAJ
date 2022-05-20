@@ -19,12 +19,15 @@ def fouryearplan():
 
 @app.route('/info')
 def info():
-    return render_template("layouts/info.html")
+    return render_template("info.html")
 
 @app.route('/math')
 def math():
-    return render_template("layouts/math.html")
+    return render_template("math.html")
 
+@app.route('/courseselection')
+def courseselection():
+    return render_template("courseselection.html")
 
 if __name__ == "__main__":
     # runs the application on the repl development server

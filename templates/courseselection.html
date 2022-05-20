@@ -1,0 +1,42 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+{#    <select class="extra" id="input1" onclick="cond()">#}
+{#        <option value="0"></option>#}
+{#        <option value="1">Honors</option>#}
+{#        <option value="2">Normal</option>#}
+{##}
+{#    </select>#}
+{##}
+{#    <button type="button" onclick="cond()">Submit</button>#}
+{##}
+{#    <script>#}
+{##}
+{#        function cond(){#}
+{#            const classList = ["Math Accel", "Int. 1A", "Int 1B", "Int 2A", "Int 2B", "Trig", "Int. 3A", "Int. 3B", "AFA 1", "AFA 2", "Pre-Calc 1", "AP Calc AB 1", "AP Calc AB 2", "Pre-Calc 2", "AP Calc BC 1", "AP Calc BC 2", "AP Stats 1", "AP Stats 2", "AP Stats 3", "You're cracked at math", "Select a Class"]#}
+{#            const dropdownPick = parseInt(document.getElementById("input1").value);#}
+{#            document.getElementById("input1").innerHTML = classList[dropdownPick + 1];#}
+{#            console.log("hello")#}
+{#        }#}
+{#    </script>#}
+
+    <script>
+        function freshmanEnglish() {
+            var nineEnglish = document.getElementById("freshman-english");
+            var value = nineEnglish.options[nineEnglish.selectedIndex].value;
+            console.log("value is:" + value)
+            var text = nineEnglish.options[nineEnglish.selectedIndex].text;
+            console.log("text is:" + text)
+        }
+    </script>
+
+    <form>
+        <b> Select 9th grade English: </b>
+        <select id = "freshman-english" onchange = "freshmanEnglish()" >
+            <option value="1"> ---Choose English--- </option>
+            <option value="2"> Honors High School English 1-2 </option>
+            <option value="3"> High School English 1-2 </option>
+        </select>
+    </form>
+{% endblock %}
