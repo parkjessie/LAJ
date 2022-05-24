@@ -68,7 +68,7 @@ def crud_authorize():
 def logout():
     logout_user() # logs user out
     print("logged out") # error checking to ensure log out happened
-    return redirect(url_for('crud.crud_login'))
+    return redirect("/")
     # check if logged in
     # if logged in, log out
 
@@ -127,7 +127,7 @@ def delete():
 
 # Search Form
 @app_crud.route('/search/')
-@login_required
+#@login_required
 def search():
     """loads form to search Users data"""
     return render_template("search.html")
