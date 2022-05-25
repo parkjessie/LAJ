@@ -20,30 +20,73 @@
     <tr id="history">
         <td>History- 30 credits or 3 years</td>
         <td>n/a</td>
-        <td>AP European History or World History?</td>
-        <td>AP US History or US History</td>
-        <td>AP Government or Civics and Economics</td>
+        <td>
+            <form>
+                <select id = "soph-history" onchange = "sophCourses()" >
+                    <option value="1"> ---Choose 10th Grade History--- </option>
+                    <option value="2"> World History 1-2 </option>
+                    <option value="3"> AP World History 1-2-Seminar </option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id = "junior-history" onchange = "juniorHistory()" >
+                    <option value="1"> ---Choose 11th Grade History--- </option>
+                    <option value="2"> US History 1-2 </option>
+                    <option value="3"> AP US History 1-2-Seminar </option>
+                </select>
+            </form>
+            <form>
+                <select id = "junior-history-retake" onchange = "sophHistory()" >
+                    <option value="1"> ---Retake?--- </option>
+                    <option value="2"> N/A </option>
+                    <option value="3"> World History 1-2 </option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id = "senior-history" onchange = "seniorHistory()" >
+                    <option value="1"> ---Choose 12th Grade History--- </option>
+                    <option value="2"> Civics - Economics </option>
+                    <option value="3"> AP Gov 1-2-Seminar </option>
+                </select>
+            </form>
+            <form>
+                <select id = "senior-history-retake" onchange = "seniorRetakeHistory()" >
+                    <option value="1"> ---Retake?--- </option>
+                    <option value="2"> N/A </option>
+                    <option value="3"> World History 1-2 </option>
+                    <option value="4"> US History 1-2 </option>
+                    <option value="5"> AP US History 1-2-Seminar </option>
+                </select>
+            </form>
+
+        </td>
         <td>Total- (insert math where it counts both history credits and potential elective credits from APs</td>
     </tr>
     <tr id="English">
         <td>English- 40 credits or 4 years</td>
-        <td><form>
-            <select id = "freshman-english" onchange = "freshmanEnglish()" >
-                <option value="1"> ---Choose 9th Grade English--- </option>
-                <option value="2"> Honors High School English 1-2 </option>
-                <option value="3"> High School English 1-2 </option>
-            </select>
-        </form></td>
         <td>
             <form>
-                <select id="soph-english" onchange="sophEnglish()">
+                <select id = "freshman-english" onchange = "freshmanEnglish()" >
+                    <option value="1"> ---Choose 9th Grade English--- </option>
+                    <option value="2"> Honors High School English 1-2 </option>
+                    <option value="3"> High School English 1-2 </option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-english" onchange="sophCourses()">
                     <option value="1">---Choose 10th Grade English---</option>
                     <option value="2">Honors Humanities 1-2</option>
                     <option value="3">High School English 3-4</option>
                 </select>
             </form>
             <form>
-                <select id="soph-english-retake" onchange="sophRetakeEnglish">
+                <select id="soph-english-retake" onchange="sophCourses()">
                     <option value="1">---Retake?---</option>
                     <option value="2">N/A</option>
                     <option value="3"> Honors High School English 1-2 </option>
@@ -51,35 +94,318 @@
                 </select>
             </form>
         </td>
-        <td>AP English or American Literature or ...</td>
-        <td>AP English or World Lit or Expos or ...</td>
-        <td> </td>
+        <td>
+            <form>
+                <select id="junior-english" onchange="juniorEngish()">
+                    <option value="1">---Choose 11th Grade English---</option>
+                    <option value="2">American Literature 1-2</option>
+                    <option value="3">Ethnic Literature 1-2</option>
+                    <option value="4">Expository Reading and Writing 1-2</option>
+                    <option value="5">AP English Language 1-2-Seminar</option>
+                    <option value="6">AP English Literature 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="junior-english-retake" onchange="juniorRetakeEnglish()">
+                    <option value="1">---Retake?---</option>
+                    <option value="2">N/A</option>
+                    <option value="3"> Honors High School English 1-2 </option>
+                    <option value="4"> High School English 1-2 </option>
+                    <option value="5">Honors Humanities 1-2</option>
+                    <option value="6">High School English 3-4</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="senior-english" onchange="seniorEnglish()">
+                    <option value="1">---Choose 12th Grade English---</option>
+                    <option value="2">Expository Reading and Writing 1-2</option>
+                    <option value="3">World Literature 1-2</option>
+                    <option value="4">Ethnic Literature 1-2</option>
+                    <option value="5">AP English Language 1-2-Seminar</option>
+                    <option value="6">AP English Literature 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="senior-english-retake" onchange="seniorRetakeEnglish()">
+                    <option value="1">---Retake?---</option>
+                    <option value="2">N/A</option>
+                    <option value="3"> Honors High School English 1-2 </option>
+                    <option value="4"> High School English 1-2 </option>
+                    <option value="5">Honors Humanities 1-2</option>
+                    <option value="6">High School English 3-4</option>
+                    <option value="7">American Literature 1-2</option>
+                </select>
+            </form>
+        </td>
+        <td>total = ? </td>
     </tr>
     <tr id="Math">
         <td>Math- 20 credits or 2 years</td>
-        <td></td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td>
+            <form>
+                <select id="fresh-math" onchange="mathClasses()">
+                    <option value="0">---Choose Your Math Course---</option>
+                    <option value="1">Int. 1A-1B-2A</option>
+                    <option value="2">Int. 2A-2B-Trig</option>
+                    <option value="3">Int. 2B-3A-3B</option>
+                    <option value="4">Int. 2B-3A-3B and PreCalc1</option>
+                    <option value="5">Int. 3A-3B-PreCalc1</option>
+                    <option value="6">AFA 1-2-PreCalc1</option>
+                    <option value="7">AP Calc AB 1-2-PreCalc2</option>
+                    <option value="8">Bridge to BC-AP Calc BC 1-2</option>
+                    <option value="9">AP Stats 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-math" onchange="sophCourses()">
+                    <option value="0">---Choose Your Math Course---</option>
+                    <option value="1">Int. 1A-1B-2A</option>
+                    <option value="2">Int. 2A-2B-Trig</option>
+                    <option value="3">Int. 2B-3A-3B</option>
+                    <option value="4">Int. 2B-3A-3B and PreCalc1</option>
+                    <option value="5">Int. 3A-3B-PreCalc1</option>
+                    <option value="6">AFA 1-2-PreCalc1</option>
+                    <option value="7">AP Calc AB 1-2-PreCalc2</option>
+                    <option value="8">Bridge to BC-AP Calc BC 1-2</option>
+                    <option value="9">AP Stats 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="junior-math" onchange="mathClasses()">
+                    <option value="0">---Choose Your Math Course---</option>
+                    <option value="1">Int. 1A-1B-2A</option>
+                    <option value="2">Int. 2A-2B-Trig</option>
+                    <option value="3">Int. 2B-3A-3B</option>
+                    <option value="4">Int. 2B-3A-3B and PreCalc1</option>
+                    <option value="5">Int. 3A-3B-PreCalc1</option>
+                    <option value="6">AFA 1-2-PreCalc1</option>
+                    <option value="7">AP Calc AB 1-2-PreCalc2</option>
+                    <option value="8">Bridge to BC-AP Calc BC 1-2</option>
+                    <option value="9">AP Stats 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="senior-math" onchange="mathClasses()">
+                    <option value="0">---Choose Your Math Course---</option>
+                    <option value="1">Int. 1A-1B-2A</option>
+                    <option value="2">Int. 2A-2B-Trig</option>
+                    <option value="3">Int. 2B-3A-3B</option>
+                    <option value="4">Int. 2B-3A-3B and PreCalc1</option>
+                    <option value="5">Int. 3A-3B-PreCalc1</option>
+                    <option value="6">AFA 1-2-PreCalc1</option>
+                    <option value="7">AP Calc AB 1-2-PreCalc2</option>
+                    <option value="8">Bridge to BC-AP Calc BC 1-2</option>
+                    <option value="9">AP Stats 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+
+        </td>
 
     </tr>
     <tr id="science">
         <td>Science- 20 credits or 2 years, 1 year biology, 1 year chemistry or physics </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td>
+            <form>
+                <select id="fresh-science" onchange="freshmanScience()">
+                    <option value="1">---Choose 9th Grade Science---</option>
+                    <option value="2">Biology of the Living Earth 1-2</option>
+                    <option value="3">Biology of the Living Earth 1 + Chem-</option>
+                        <option>istry in the Earth System 1-2</option>
+                    <option value="4">Principles of Biomedical Sciences 1-2</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-life-science" onchange="sophCourses()">
+                    <option value="1">---Choose 10th Grade Life Science---</option>
+                    <option value="2">Biology of the Living Earth 1-2</option>
+                    <option value="3">AP Biology 3-4-Seminar</option>
+                    <option value="4">Principles of Biomedical Sciences 1-2</option>
+                    <option value="5">Human Body Systems 1-2</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-phys-science" onchange="sophCourses()">
+                    <option value="1">---Choose 10th Grade Physical Science---</option>
+                    <option value="2">Fundamentals/Chemistry 1-2</option>
+                    <option value="3">Chemistry of the Living Earth 1-2</option>
+                    <option value="4">Fundamentals/Physics 1-2</option>
+                    <option value="5">Physics of the Universe 1-2</option>
+                    <option value="6">AP Chemistry 1-2-Seminar</option>
+                    <option value="7">AP Environmental Science 1-2-Seminar</option>
+                    <option value="8">AP Physics C: Mechanics 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="junior-life-science" onchange="juniorLifeScience()">
+                    <option value="1">---Choose 11th Grade Life Science---</option>
+                    <option value="2">Biology of the Living Earth 1-2</option>
+                    <option value="3">AP Biology 3-4-Seminar</option>
+                    <option value="4">Principles of Biomedical Sciences 1-2</option>
+                    <option value="5">Human Body Systems 1-2</option>
+                    <option value="6">Honors Medical Interventions 1-2</option>
+                </select>
+            </form>
+            <form>
+                <select id="junior-phys-science" onchange="juniorPhysScience()">
+                    <option value="1">---Choose 11th Grade Phys Science---</option>
+                    <option value="2">Fundamentals/Chemistry 1-2</option>
+                    <option value="3">Chemistry of the Living Earth 1-2</option>
+                    <option value="4">Fundamentals/Physics 1-2</option>
+                    <option value="5">Physics of the Universe 1-2</option>
+                    <option value="6">AP Chemistry 1-2-Seminar</option>
+                    <option value="7">AP Environmental Science 1-2-Seminar</option>
+                    <option value="8">AP Physics C: Mechanics 1-2-Seminar</option>
+                    <option value="9">AP Physics C: E & M 1-2-Sem</option>
+
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="senior-life-science" onchange="seniorLifeScience()">
+                    <option value="1">---Choose 12th Grade Life Science---</option>
+                    <option value="2">Biology of the Living Earth 1-2</option>
+                    <option value="3">AP Biology 3-4-Seminar</option>
+                    <option value="4">Human Body Systems 1-2</option>
+                    <option value="5">Honors Medical Interventions 1-2</option>
+                </select>
+            </form>
+            <form>
+                <select id="senior-phys-science" onchange="seniorPhysScience()">
+                    <option value="1">---Choose 12th Grade Phys Science---</option>
+                    <option value="2">Fundamentals/Chemistry 1-2</option>
+                    <option value="3">Chemistry of the Living Earth 1-2</option>
+                    <option value="4">Fundamentals/Physics 1-2</option>
+                    <option value="5">Physics of the Universe 1-2</option>
+                    <option value="6">AP Chemistry 1-2-Seminar</option>
+                    <option value="7">AP Environmental Science 1-2-Seminar</option>
+                    <option value="8">AP Physics C: Mechanics 1-2-Seminar</option>
+                    <option value="9">AP Physics C: E & M 1-2-Sem</option>
+                </select>
+            </form>
+        </td>
         <td> </td>
 
     </tr>
     <tr id="flang-fine">
         <td>Foreign Language or Fine Art- 5 credits or 1 trimester</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td>
+            <form>
+                <select id="fresh-chinese" onchange="freshmanChinese()">
+                    <option value="1">---Choose 9th Grade Chinese---</option>
+                    <option value="2">Chinese 1-2-3</option>
+                    <option value="3">Chinese 4-5-6</option>
+                    <option value="4">AP Chinese 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="fresh-spanish" onchange="freshmanSpanish()">
+                    <option value="1">---Choose 9th Grade Spanish---</option>
+                    <option value="2">Spanish 1-2</option>
+                    <option value="3">Spanish 3-4</option>
+                    <option value="4">Spanish 1-2-3</option>
+                    <option value="5">Spanish 2-3-4</option>
+                    <option value="6">Spanish 3-4-5</option>
+                    <option value="7">Spanish 4-5-6</option>
+                    <option value="8">AP Spanish 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-chinese" onchange="sophCourses()">
+                    <option value="1">---Choose 10th Grade Chinese---</option>
+                    <option value="2">Chinese 1-2-3</option>
+                    <option value="3">Chinese 4-5-6</option>
+                    <option value="4">Chinese 7-8-9</option>
+                    <option value="4">AP Chinese 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-spanish" onchange="sophCourses()">
+                    <option value="1">---Choose 10th Grade Spanish---</option>
+                    <option value="2">Spanish 1-2</option>
+                    <option value="3">Spanish 3-4</option>
+                    <option value="4">Spanish 5-6</option>
+                    <option value="5">Spanish 7-8</option>
+                    <option value="6">Spanish 1-2-3</option>
+                    <option value="7">Spanish 2-3-4</option>
+                    <option value="8">Spanish 3-4-5</option>
+                    <option value="9">Spanish 4-5-6</option>
+                    <option value="10">Spanish 6-7-8</option>
+                    <option value="11">AP Spanish 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-chinese" onchange="sophChinese()">
+                    <option value="1">---Choose 11th Grade Chinese---</option>
+                    <option value="2">Chinese 1-2-3</option>
+                    <option value="3">Chinese 4-5-6</option>
+                    <option value="4">Chinese 7-8-9</option>
+                    <option value="4">AP Chinese 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-spanish" onchange="sophSpanish()">
+                    <option value="1">---Choose 11th Grade Spanish---</option>
+                    <option value="2">Spanish 1-2</option>
+                    <option value="3">Spanish 3-4</option>
+                    <option value="4">Spanish 5-6</option>
+                    <option value="5">Spanish 7-8</option>
+                    <option value="6">Spanish 1-2-3</option>
+                    <option value="7">Spanish 2-3-4</option>
+                    <option value="8">Spanish 3-4-5</option>
+                    <option value="9">Spanish 4-5-6</option>
+                    <option value="10">Spanish 6-7-8</option>
+                    <option value="11">AP Spanish 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-chinese" onchange="sophChinese()">
+                    <option value="1">---Choose 12th Grade Chinese---</option>
+                    <option value="2">Chinese 1-2-3</option>
+                    <option value="3">Chinese 4-5-6</option>
+                    <option value="4">Chinese 7-8-9</option>
+                    <option value="4">AP Chinese 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-spanish" onchange="sophSpanish()">
+                    <option value="1">---Choose 12th Grade Spanish---</option>
+                    <option value="2">Spanish 1-2</option>
+                    <option value="3">Spanish 3-4</option>
+                    <option value="4">Spanish 5-6</option>
+                    <option value="5">Spanish 7-8</option>
+                    <option value="6">Spanish 1-2-3</option>
+                    <option value="7">Spanish 2-3-4</option>
+                    <option value="8">Spanish 3-4-5</option>
+                    <option value="9">Spanish 4-5-6</option>
+                    <option value="10">Spanish 6-7-8</option>
+                    <option value="11">AP Spanish 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+
+        </td>
 
     </tr>
     <tr id="visart">
@@ -110,16 +436,127 @@
     </tr>
     <tr id="offrolls">
         <td>Offrolls- max of 1 per trimester, except 12th grade</td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
+        <td>
+            <form>
+                <select id="fresh-1-off" onchange="freshmanFirstOff()">
+                    <option value="1">---Choose First Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+            <form>
+                <select id="fresh-2-off" onchange="freshmanSecOff()">
+                    <option value="1">---Choose Second Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+            <form>
+                <select id="fresh-3-off" onchange="freshmanThirdOff()">
+                    <option value="1">---Choose Third Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-1-off" onchange="sophCourses()">
+                    <option value="1">---Choose First Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-2-off" onchange="sophCourses()">
+                    <option value="1">---Choose Second Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-3-off" onchange="sophCourses()">
+                    <option value="1">---Choose Third Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="junior-1-off" onchange="juniorFirstOff()">
+                    <option value="1">---Choose First Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+            <form>
+                <select id="junior-2-off" onchange="juniorSecOff()">
+                    <option value="1">---Choose Second Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+            <form>
+                <select id="junior-3-off" onchange="juniorThirdOff()">
+                    <option value="1">---Choose Third Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="senior-1-off" onchange="seniorFirstOff()">
+                    <option value="1">---Choose First Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                    <option value="5">First and Second</option>
+                    <option value="6">First and Fifth</option>
+                    <option value="7">Fourth and Fifth</option>
+                </select>
+            </form>
+            <form>
+                <select id="senior-2-off" onchange="seniorSecOff()">
+                    <option value="1">---Choose Second Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                    <option value="5">First and Second</option>
+                    <option value="6">First and Fifth</option>
+                    <option value="7">Fourth and Fifth</option>
+                </select>
+            </form>
+            <form>
+                <select id="senior-3-off" onchange="seniorThirdOff()">
+                    <option value="1">---Choose Third Tri Offroll---</option>
+                    <option value="2">None</option>
+                    <option value="3">First Period</option>
+                    <option value="4">Fifth Period</option>
+                    <option value="5">First and Second</option>
+                    <option value="6">First and Fifth</option>
+                    <option value="7">Fourth and Fifth</option>
+                </select>
+            </form>
+        </td>
         <td></td>
     </tr>
     <tr id="total-per-year">
         <td>Total- 15 classes per year</td>
         <td> </td>
-        <td> </td>
+        <td>
+            <span id="soph-total"></span>
+        </td>
         <td> </td>
         <td> </td>
         <td> </td>
@@ -128,16 +565,111 @@
 </table>
 
     <script>
-        function freshmanEnglish() {
-            var nineEnglish = document.getElementById("freshman-english");
-            var value = nineEnglish.options[nineEnglish.selectedIndex].value;
-            console.log("value is:" + value)
-            var text = nineEnglish.options[nineEnglish.selectedIndex].text;
-            console.log("text is:" + text)
+        function sophCourses() {
+            {#pull history course to check length#}
+            var sophHistory = document.getElementById("soph-history")
+            var sophHistoryCourse = sophHistory.options[sophHistory.selectedIndex].value
+            if (sophHistoryCourse > 2) {
+                sophHistoryLen = 3
+            }
+            else {
+                sophHistoryLen = 2
+            }
+            console.log("soph hist len: " + sophHistoryLen)
+
+        {#    pull english course to check length#}
+            var sophEnglish = document.getElementById("soph-english")
+            var sophEnglishCourse = sophEnglish.options[sophEnglish.selectedIndex].value
+            if (sophEnglishCourse === 1) {
+                var sophEngishLen = 0
+            }
+            else {
+                sophEngishLen = 2
+            }
+            console.log("english b4 retake: " + sophEngishLen)
+            var sophEnglishRetake = document.getElementById("soph-english-retake")
+            var sophEnglishRetakeCourse = sophEnglishRetake.options[sophEnglishRetake.selectedIndex].value
+            if ((sophEnglishRetakeCourse === 1) && (sophEnglishCourse !== 0)) {
+                sophEngishLen = 2
+            }
+            else if (sophEnglishRetakeCourse === 2) {
+                sophEngishLen = 2
+            }
+            else {
+                sophEngishLen = sophEngishLen + 2
+            }
+            console.log("english after retake: " + sophEngishLen)
+
+            {#pull math course#}
+            var sophMath = document.getElementById("soph-math")
+            var sophMathCourse = sophMath.options[sophMath.selectedIndex].value
+            if (sophMathCourse === 5){
+                var sophMathLen = 4
+            }
+            else if (sophMathCourse === 1) {
+                sophMathLen = 0
+            }
+            else {
+                sophMathLen = 3
+            }
+            console.log("soph math: " + sophMathLen)
+
+            var sophLifeScience = document.getElementById("soph-life-science")
+            var sophLifeScienceCourse = sophLifeScience.options[sophLifeScience.selectedIndex].value
+            if (sophLifeScienceCourse === 3) {
+                var sophLifeScienceLen = 3
+            }
+            else if (sophLifeScienceCourse === 1) {
+                sophLifeScienceLen = 0
+            }
+            else {
+                sophLifeScienceLen = 2
+            }
+            console.log("life sci: " + sophLifeScienceLen)
+
+            var sophPhysScience = document.getElementById("soph-phys-science")
+            var sophPhysScienceCourse = sophPhysScience.options[sophPhysScience.selectedIndex].value
+            if ((sophPhysScienceCourse === 2) || (sophPhysScienceCourse === 4) || (sophPhysScienceCourse >= 6)) {
+                var sophPhysScienceLen = 3
+            }
+            else {
+                sophPhysScienceLen = 2
+            }
+            console.log("phys sci: " + sophPhysScienceLen)
+
+            var sophChinese = document.getElementById("soph-chinese")
+            var sophChineseCourse = sophChinese.options[sophChinese.selectedIndex].value
+            if (sophChineseCourse !== 1) {
+                var sophChineseLen = 3
+            }
+            else {
+                sophChineseLen = 0
+            }
+            console.log("chinese: " + sophChineseLen)
+
+            {#check if student is taking correct number of classes#}
+            var totalSophCourses = sophHistoryLen + sophEngishLen + sophMathLen + sophLifeScienceLen + sophPhysScienceLen + sophChineseLen
+            console.log("total is: " + totalSophCourses)
+            if (totalSophCourses < 15){
+                document.getElementById("soph-total").innerHTML = "You do not have enough Courses"
+            }
+            else if (totalSophCourses > 15) {
+                document.getElementById("soph-total").innerHTML = "Can not have more than 15 classes"
+            }
+            else {
+                document.getElementById("soph-total").innerHTML = "You have enough classes!"
+            }
         }
 
-        function sophEnglish() {
-            var tenEnglish = document.getElementById("soph-english")
+        function freshmanEnglish() {
+            var nineEnglish = document.getElementById("freshman-english");
+            console.log(nineEnglish)
+            var value = nineEnglish.options[nineEnglish.selectedIndex].value;
+            console.log("value is:" + value)
+            var nineEnglishCourse = nineEnglish.options[nineEnglish.selectedIndex].text;
+            console.log("text is:" + nineEnglishCourse)
+            var nineEnglishLen = 2
         }
+
     </script>
 {% endblock %}
