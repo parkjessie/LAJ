@@ -15,14 +15,14 @@
         <th>10th Grade</th>
         <th>11th Grade</th>
         <th>12th Grade</th>
-        <th>Total Credits for Each Catergory</th>
+        <th>Total Credits for Each Category</th>
     </tr>
     <tr id="history">
         <td>History- 30 credits or 3 years</td>
         <td>n/a</td>
         <td>
             <form>
-                <select id = "soph-history" onchange = "sophCourses()" >
+                <select id = "soph-history" onchange = "sophHistory()" >
                     <option value="1"> ---Choose 10th Grade History--- </option>
                     <option value="2"> World History 1-2 </option>
                     <option value="3"> AP World History 1-2-Seminar </option>
@@ -79,14 +79,14 @@
         </td>
         <td>
             <form>
-                <select id="soph-english" onchange="sophCourses()">
+                <select id="soph-english" onchange="sophEnglish()">
                     <option value="1">---Choose 10th Grade English---</option>
                     <option value="2">Honors Humanities 1-2</option>
                     <option value="3">High School English 3-4</option>
                 </select>
             </form>
             <form>
-                <select id="soph-english-retake" onchange="sophCourses()">
+                <select id="soph-english-retake" onchange="sophEnglishRetake()">
                     <option value="1">---Retake?---</option>
                     <option value="2">N/A</option>
                     <option value="3"> Honors High School English 1-2 </option>
@@ -161,17 +161,17 @@
         </td>
         <td>
             <form>
-                <select id="soph-math" onchange="sophCourses()">
-                    <option value="0">---Choose Your Math Course---</option>
-                    <option value="1">Int. 1A-1B-2A</option>
-                    <option value="2">Int. 2A-2B-Trig</option>
-                    <option value="3">Int. 2B-3A-3B</option>
-                    <option value="4">Int. 2B-3A-3B and PreCalc1</option>
-                    <option value="5">Int. 3A-3B-PreCalc1</option>
-                    <option value="6">AFA 1-2-PreCalc1</option>
-                    <option value="7">AP Calc AB 1-2-PreCalc2</option>
-                    <option value="8">Bridge to BC-AP Calc BC 1-2</option>
-                    <option value="9">AP Stats 1-2-Seminar</option>
+                <select id="soph-math" onchange="sophMath()">
+                    <option value="1">---Choose Your Math Course---</option>
+                    <option value="2">Int. 1A-1B-2A</option>
+                    <option value="3">Int. 2A-2B-Trig</option>
+                    <option value="4">Int. 2B-3A-3B</option>
+                    <option value="5">Int. 2B-3A-3B and PreCalc1</option>
+                    <option value="6">Int. 3A-3B-PreCalc1</option>
+                    <option value="7">AFA 1-2-PreCalc1</option>
+                    <option value="8">AP Calc AB 1-2-PreCalc2</option>
+                    <option value="9">Bridge to BC-AP Calc BC 1-2</option>
+                    <option value="10">AP Stats 1-2-Seminar</option>
                 </select>
             </form>
         </td>
@@ -227,7 +227,7 @@
         </td>
         <td>
             <form>
-                <select id="soph-life-science" onchange="sophCourses()">
+                <select id="soph-life-science" onchange="sophLifeScience()">
                     <option value="1">---Choose 10th Grade Life Science---</option>
                     <option value="2">Biology of the Living Earth 1-2</option>
                     <option value="3">AP Biology 3-4-Seminar</option>
@@ -236,15 +236,16 @@
                 </select>
             </form>
             <form>
-                <select id="soph-phys-science" onchange="sophCourses()">
+                <select id="soph-phys-science" onchange="sophPhysScience()">
                     <option value="1">---Choose 10th Grade Physical Science---</option>
-                    <option value="2">Fundamentals/Chemistry 1-2</option>
-                    <option value="3">Chemistry of the Living Earth 1-2</option>
-                    <option value="4">Fundamentals/Physics 1-2</option>
-                    <option value="5">Physics of the Universe 1-2</option>
-                    <option value="6">AP Chemistry 1-2-Seminar</option>
-                    <option value="7">AP Environmental Science 1-2-Seminar</option>
-                    <option value="8">AP Physics C: Mechanics 1-2-Seminar</option>
+                    <option value="2">None</option>
+                    <option value="3">Fundamentals/Chemistry 1-2</option>
+                    <option value="4">Chemistry of the Living Earth 1-2</option>
+                    <option value="5">Fundamentals/Physics 1-2</option>
+                    <option value="6">Physics of the Universe 1-2</option>
+                    <option value="7">AP Chemistry 1-2-Seminar</option>
+                    <option value="8">AP Environmental Science 1-2-Seminar</option>
+                    <option value="9">AP Physics C: Mechanics 1-2-Seminar</option>
                 </select>
             </form>
         </td>
@@ -565,19 +566,27 @@
 </table>
 
     <script>
-        function sophCourses() {
+
+        let totalSophCourses = 0;
+
+        function sophHistory() {
             {#pull history course to check length#}
+            let sophHistoryLen;
             var sophHistory = document.getElementById("soph-history")
             var sophHistoryCourse = sophHistory.options[sophHistory.selectedIndex].value
             if (sophHistoryCourse > 2) {
-                sophHistoryLen = 3
+                sophHistoryLen = 3;
             }
             else {
                 sophHistoryLen = 2
             }
             console.log("soph hist len: " + sophHistoryLen)
+            totalSophCourses = totalSophCourses + sophHistoryLen
+            console.log("total soph courses: " + totalSophCourses)
+            return totalSophCourses
+        }
 
-        {#    pull english course to check length#}
+        function sophEnglish() {
             var sophEnglish = document.getElementById("soph-english")
             var sophEnglishCourse = sophEnglish.options[sophEnglish.selectedIndex].value
             if (sophEnglishCourse === 1) {
@@ -587,55 +596,80 @@
                 sophEngishLen = 2
             }
             console.log("english b4 retake: " + sophEngishLen)
+            totalSophCourses = totalSophCourses + sophEngishLen
+            console.log("total with english: " + totalSophCourses)
+        }
+
+        function sophEnglishRetake() {
             var sophEnglishRetake = document.getElementById("soph-english-retake")
             var sophEnglishRetakeCourse = sophEnglishRetake.options[sophEnglishRetake.selectedIndex].value
-            if ((sophEnglishRetakeCourse === 1) && (sophEnglishCourse !== 0)) {
-                sophEngishLen = 2
-            }
-            else if (sophEnglishRetakeCourse === 2) {
-                sophEngishLen = 2
+            if (sophEnglishRetakeCourse === "2") {
+                var sophEnglishRetakeLen = 0
             }
             else {
-                sophEngishLen = sophEngishLen + 2
+                sophEnglishRetakeLen = 2
             }
-            console.log("english after retake: " + sophEngishLen)
+            console.log("english retake len: " + sophEnglishRetakeLen)
+            totalSophCourses = totalSophCourses+ sophEnglishRetakeLen
+            console.log("total with retake: " + totalSophCourses)
+        }
 
-            {#pull math course#}
+        function sophMath() {
             var sophMath = document.getElementById("soph-math")
             var sophMathCourse = sophMath.options[sophMath.selectedIndex].value
-            if (sophMathCourse === 5){
+            if (sophMathCourse === "5"){
                 var sophMathLen = 4
             }
-            else if (sophMathCourse === 1) {
+            else if (sophMathCourse === "1") {
                 sophMathLen = 0
             }
             else {
                 sophMathLen = 3
             }
             console.log("soph math: " + sophMathLen)
+            totalSophCourses = totalSophCourses + sophMathLen
+            console.log("total with math: " + totalSophCourses)
+        }
 
+        function sophLifeScience() {
             var sophLifeScience = document.getElementById("soph-life-science")
             var sophLifeScienceCourse = sophLifeScience.options[sophLifeScience.selectedIndex].value
-            if (sophLifeScienceCourse === 3) {
+            if (sophLifeScienceCourse === "3") {
                 var sophLifeScienceLen = 3
             }
-            else if (sophLifeScienceCourse === 1) {
+            else if (sophLifeScienceCourse === "1") {
                 sophLifeScienceLen = 0
             }
             else {
                 sophLifeScienceLen = 2
             }
             console.log("life sci: " + sophLifeScienceLen)
+            totalSophCourses = totalSophCourses + sophLifeScienceLen
+            console.log("total with life sci: " + totalSophCourses)
+        }
 
+        function sophPhysScience() {
             var sophPhysScience = document.getElementById("soph-phys-science")
             var sophPhysScienceCourse = sophPhysScience.options[sophPhysScience.selectedIndex].value
-            if ((sophPhysScienceCourse === 2) || (sophPhysScienceCourse === 4) || (sophPhysScienceCourse >= 6)) {
+            if ((sophPhysScienceCourse === "3") || (sophPhysScienceCourse === "5") || (sophPhysScienceCourse >= "7")) {
                 var sophPhysScienceLen = 3
+            }
+            else if (sophPhysScienceCourse === "2") {
+                sophPhysScienceLen = 0
             }
             else {
                 sophPhysScienceLen = 2
             }
             console.log("phys sci: " + sophPhysScienceLen)
+            totalSophCourses = totalSophCourses + sophPhysScienceLen
+            console.log("total with phys sci: " + totalSophCourses)
+
+        }
+
+        function sophCourses() {
+
+
+
 
             var sophChinese = document.getElementById("soph-chinese")
             var sophChineseCourse = sophChinese.options[sophChinese.selectedIndex].value
@@ -648,17 +682,17 @@
             console.log("chinese: " + sophChineseLen)
 
             {#check if student is taking correct number of classes#}
-            var totalSophCourses = sophHistoryLen + sophEngishLen + sophMathLen + sophLifeScienceLen + sophPhysScienceLen + sophChineseLen
-            console.log("total is: " + totalSophCourses)
-            if (totalSophCourses < 15){
-                document.getElementById("soph-total").innerHTML = "You do not have enough Courses"
-            }
-            else if (totalSophCourses > 15) {
-                document.getElementById("soph-total").innerHTML = "Can not have more than 15 classes"
-            }
-            else {
-                document.getElementById("soph-total").innerHTML = "You have enough classes!"
-            }
+            {#var totalSophCourses = sophHistoryLen + sophEngishLen + sophMathLen + sophLifeScienceLen + sophPhysScienceLen + sophChineseLen#}
+            {#console.log("total is: " + totalSophCourses)#}
+            {#if (totalSophCourses < 15){#}
+            {#    document.getElementById("soph-total").innerHTML = "You do not have enough Courses"#}
+            {#}#}
+            {#else if (totalSophCourses > 15) {#}
+            {#    document.getElementById("soph-total").innerHTML = "Can not have more than 15 classes"#}
+            {#}#}
+            {#else {#}
+            {#    document.getElementById("soph-total").innerHTML = "You have enough classes!"#}
+            {#}#}
         }
 
         function freshmanEnglish() {
