@@ -31,7 +31,7 @@ app_crud = Blueprint('crud', __name__,
 
 @app_crud.route('/fouryearplanner')
 def fouryearplanner():
-    subjects_list = courses_english(["ENGL", "MATH", "FLNG"])
+    subjects_list = courses_english(["SSCI", "ENGL", "MATH", "SCI", "FLNG", "ELEC", "PE", "OFF ROLL"])
     return render_template("fouryearplanner.html", subjects_titles=subjects_list[0], subjects_list=subjects_list[1])
 
 

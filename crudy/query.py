@@ -2,10 +2,38 @@ from __init__ import login_manager, db
 from crudy.model import Users, Courses
 from flask_login import current_user, login_user, logout_user
 
+
 def courses_all():
     table = Courses.query.all()
     json_ready = [course.read() for course in table]
     return json_ready
+
+
+def courses_history():
+    table = Courses.query.filter_by(dept="SSCI")
+    json_ready = [course.read() for course in table]
+
+    freshman = []
+    for j in json_ready:
+        if j["freshman"] != "":
+            freshman.append(j)
+
+    sophomore = []
+    for j in json_ready:
+        if j["sophomore"] != "" and j["freshman"] == "":
+            sophomore.append(j)
+
+    junior = []
+    for j in json_ready:
+        if j["junior"] != "" and (j["freshman"] == "" and j["sophomore"] == ""):
+            junior.append(j)
+
+    senior = []
+    for j in json_ready:
+        if j["senior"] != "" and (j["freshman"] == "" and j["sophomore"] == "" and j["junior"] == ""):
+            senior.append(j)
+    return freshman, sophomore, junior, senior
+
 
 def courses_english(subjects):
     # table = Courses.query.all()
