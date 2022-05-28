@@ -7,6 +7,40 @@ def courses_all():
     json_ready = [course.read() for course in table]
     return json_ready
 
+def courses_english(subjects):
+    # table = Courses.query.all()
+    subject_titles = []
+    subject_courses = []
+    for subject in subjects:
+        table = Courses.query.filter_by(dept=subject)
+        json_ready = [course.read() for course in table]
+
+        freshman = []
+        for j in json_ready:
+            if j["freshman"] != "":
+                freshman.append(j)
+
+        sophomore = []
+        for j in json_ready:
+            if j["sophomore"] != "" and j["freshman"] == "":
+                sophomore.append(j)
+
+        junior = []
+        for j in json_ready:
+            if j["junior"] != "" and (j["freshman"] == "" and j["sophomore"] == ""):
+                junior.append(j)
+
+        senior = []
+        for j in json_ready:
+            if j["senior"] != "" and (j["freshman"] == "" and j["sophomore"] == "" and j["junior"] == ""):
+                senior.append(j)
+
+        subject_titles.append(subject)
+        subject_courses.append([freshman, sophomore, junior, senior])
+    # subjects_list.append([{"subject_courses": subject_courses}])
+    return [subject_titles, subject_courses]
+
+
 # this is method called by frontend, it has been randomized between Alchemy and Native SQL for fun
 def users_all():
     """  May have some problems with sql in deployment

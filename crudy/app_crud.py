@@ -1,5 +1,5 @@
 """control dependencies to support CRUD app routes and APIs"""
-from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response
+from flask import Blueprint, render_template, request, url_for, redirect, jsonify, make_response, app
 from flask_login import login_required
 
 from crudy.query import *
@@ -16,6 +16,23 @@ app_crud = Blueprint('crud', __name__,
     2.) Control methods are achieved using app routes for each CRUD operations
     3.) login required to restrict CRUD operations to identified users
 """
+
+# mysql = MySQL()
+#
+# # configuring MySQL for the web application
+# app.config['MYSQL_DATABASE_USER'] = 'root'    # default user of MySQL to be replaced with appropriate username
+# app.config['MYSQL_DATABASE_PASSWORD'] = '' # default passwrod of MySQL to be replaced with appropriate password
+# app.config['MYSQL_DATABASE_DB'] = 'jobsdb'  # Database name to be replaced with appropriate database name
+# app.config['MYSQL_DATABASE_HOST'] = 'localhost' # default database host of MySQL to be replaced with appropriate database host
+# #initialise mySQL
+# mysql.init_app(app)
+# #create connection to access data
+# conn = mysql.connect()
+
+@app_crud.route('/fouryearplanner')
+def fouryearplanner():
+    subjects_list = courses_english(["ENGL", "MATH", "FLNG"])
+    return render_template("fouryearplanner.html", subjects_titles=subjects_list[0], subjects_list=subjects_list[1])
 
 
 # Default URL for Blueprint

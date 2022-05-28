@@ -1,5 +1,11 @@
 {% extends "layouts/base.html" %}
 
+{#
+different way to do this page:
+use database of courses to check what courses are for each grade and carry that into dropdown
+if freshman course id exists, put in freshman column--- how  to separate retakes?
+#}
+
 {% block body %}
     <style>
         th, td {
@@ -306,55 +312,59 @@
         <td>Foreign Language or Fine Art- 5 credits or 1 trimester</td>
         <td>
             <form>
-                <select id="fresh-chinese" onchange="freshmanChinese()">
+                <select id="fresh-chinese" onchange="freshChinese()">
                     <option value="1">---Choose 9th Grade Chinese---</option>
-                    <option value="2">Chinese 1-2-3</option>
-                    <option value="3">Chinese 4-5-6</option>
-                    <option value="4">AP Chinese 1-2-Seminar</option>
+                    <option value="2">None</option>
+                    <option value="3">Chinese 1-2-3</option>
+                    <option value="4">Chinese 4-5-6</option>
+                    <option value="5">AP Chinese 1-2-Seminar</option>
                 </select>
             </form>
             <form>
-                <select id="fresh-spanish" onchange="freshmanSpanish()">
+                <select id="fresh-spanish" onchange="freshSpanish()">
                     <option value="1">---Choose 9th Grade Spanish---</option>
-                    <option value="2">Spanish 1-2</option>
-                    <option value="3">Spanish 3-4</option>
-                    <option value="4">Spanish 1-2-3</option>
-                    <option value="5">Spanish 2-3-4</option>
-                    <option value="6">Spanish 3-4-5</option>
-                    <option value="7">Spanish 4-5-6</option>
-                    <option value="8">AP Spanish 1-2-Seminar</option>
-                </select>
-            </form>
-        </td>
-        <td>
-            <form>
-                <select id="soph-chinese" onchange="sophCourses()">
-                    <option value="1">---Choose 10th Grade Chinese---</option>
-                    <option value="2">Chinese 1-2-3</option>
-                    <option value="3">Chinese 4-5-6</option>
-                    <option value="4">Chinese 7-8-9</option>
-                    <option value="4">AP Chinese 1-2-Seminar</option>
-                </select>
-            </form>
-            <form>
-                <select id="soph-spanish" onchange="sophCourses()">
-                    <option value="1">---Choose 10th Grade Spanish---</option>
-                    <option value="2">Spanish 1-2</option>
-                    <option value="3">Spanish 3-4</option>
-                    <option value="4">Spanish 5-6</option>
-                    <option value="5">Spanish 7-8</option>
-                    <option value="6">Spanish 1-2-3</option>
-                    <option value="7">Spanish 2-3-4</option>
-                    <option value="8">Spanish 3-4-5</option>
-                    <option value="9">Spanish 4-5-6</option>
-                    <option value="10">Spanish 6-7-8</option>
-                    <option value="11">AP Spanish 1-2-Seminar</option>
+                    <option value="2">None</option>
+                    <option value="3">Spanish 1-2</option>
+                    <option value="4">Spanish 3-4</option>
+                    <option value="5">Spanish 1-2-3</option>
+                    <option value="6">Spanish 2-3-4</option>
+                    <option value="7">Spanish 3-4-5</option>
+                    <option value="8">Spanish 4-5-6</option>
+                    <option value="9">AP Spanish 1-2-Seminar</option>
                 </select>
             </form>
         </td>
         <td>
             <form>
                 <select id="soph-chinese" onchange="sophChinese()">
+                    <option value="1">---Choose 10th Grade Chinese---</option>
+                    <option value="2">None</option>
+                    <option value="3">Chinese 1-2-3</option>
+                    <option value="4">Chinese 4-5-6</option>
+                    <option value="5">Chinese 7-8-9</option>
+                    <option value="6">AP Chinese 1-2-Seminar</option>
+                </select>
+            </form>
+            <form>
+                <select id="soph-spanish" onchange="sophSpanish()">
+                    <option value="1">---Choose 10th Grade Spanish---</option>
+                    <option value="2">None</option>
+                    <option value="3">Spanish 1-2</option>
+                    <option value="4">Spanish 3-4</option>
+                    <option value="5">Spanish 5-6</option>
+                    <option value="6">Spanish 7-8</option>
+                    <option value="7">Spanish 1-2-3</option>
+                    <option value="8">Spanish 2-3-4</option>
+                    <option value="9">Spanish 3-4-5</option>
+                    <option value="10">Spanish 4-5-6</option>
+                    <option value="11">Spanish 6-7-8</option>
+                    <option value="12">AP Spanish 1-2-Seminar</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="junior-chinese" onchange="juniorChinese()">
                     <option value="1">---Choose 11th Grade Chinese---</option>
                     <option value="2">Chinese 1-2-3</option>
                     <option value="3">Chinese 4-5-6</option>
@@ -363,7 +373,7 @@
                 </select>
             </form>
             <form>
-                <select id="soph-spanish" onchange="sophSpanish()">
+                <select id="junior-spanish" onchange="juniorSpanish()">
                     <option value="1">---Choose 11th Grade Spanish---</option>
                     <option value="2">Spanish 1-2</option>
                     <option value="3">Spanish 3-4</option>
@@ -380,7 +390,7 @@
         </td>
         <td>
             <form>
-                <select id="soph-chinese" onchange="sophChinese()">
+                <select id="senior-chinese" onchange="seniorChinese()">
                     <option value="1">---Choose 12th Grade Chinese---</option>
                     <option value="2">Chinese 1-2-3</option>
                     <option value="3">Chinese 4-5-6</option>
@@ -389,7 +399,7 @@
                 </select>
             </form>
             <form>
-                <select id="soph-spanish" onchange="sophSpanish()">
+                <select id="senior-spanish" onchange="seniorSpanish()">
                     <option value="1">---Choose 12th Grade Spanish---</option>
                     <option value="2">Spanish 1-2</option>
                     <option value="3">Spanish 3-4</option>
@@ -409,32 +419,83 @@
         </td>
 
     </tr>
-    <tr id="visart">
-        <td>Visual or Performing Arts- 5 credits or 1 trimester</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
 
-    </tr>
     <tr id="pe">
         <td>PE- 20 PE and 5 Health Credits (ENS 1-2-3 + 2 trimesters)</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
+        <td>
+            <form>
+                <select id="fresh-pe" onchange="freshmanPE()">
+                    <option value="1">---Choose ENS (required)---</option>
+                    <option value="2">ENS 1-2-3</option>
+                    <option value="3">Marching PE/ENS 2-1</option>
+                    <option value="4">Marching PE Tall Flags/ENS 2-1</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="soph-pe" onchange="sophPE()">
+                    <option value="1">---Choose 10th Grade PE---</option>
+                    <option value="2">None</option>
+                    <option value="3">Intermediate Basketball</option>
+                    <option value="4">Court Sports</option>
+                    <option value="5">Field Sports</option>
+                    <option value="6">Racquet Sports</option>
+                    <option value="7">Aerobics- Weight Training</option>
+                    <option value="8">Weight Training</option>
+                    <option value="9">Advanced Basketball</option>
+                    <option value="10">Advanced Baseball</option>
+                    <option value="11">Advanced Football</option>
+                    <option value="12">Advanced Softball</option>
+                    <option value="13">Marching PE</option>
+                    <option value="14">Marching PE Tall Flags</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="junior-pe" onchange="juniorPE()">
+                    <option value="1">---Choose 11th Grade PE---</option>
+                    <option value="2">None</option>
+                    <option value="3">Intermediate Basketball</option>
+                    <option value="4">Court Sports</option>
+                    <option value="5">Field Sports</option>
+                    <option value="6">Racquet Sports</option>
+                    <option value="7">Aerobics- Weight Training</option>
+                    <option value="8">Weight Training</option>
+                    <option value="9">Advanced Basketball</option>
+                    <option value="10">Advanced Baseball</option>
+                    <option value="11">Advanced Football</option>
+                    <option value="12">Advanced Softball</option>
+                    <option value="13">Marching PE</option>
+                    <option value="14">Marching PE Tall Flags</option>
+                </select>
+            </form>
+        </td>
+        <td>
+            <form>
+                <select id="senior-pe" onchange="seniorPE()">
+                    <option value="1">---Choose 12th Grade PE---</option>
+                    <option value="2">None</option>
+                    <option value="3">Intermediate Basketball</option>
+                    <option value="4">Court Sports</option>
+                    <option value="5">Field Sports</option>
+                    <option value="6">Racquet Sports</option>
+                    <option value="7">Aerobics- Weight Training</option>
+                    <option value="8">Weight Training</option>
+                    <option value="9">Advanced Basketball</option>
+                    <option value="10">Advanced Baseball</option>
+                    <option value="11">Advanced Football</option>
+                    <option value="12">Advanced Softball</option>
+                    <option value="13">Marching PE</option>
+                    <option value="14">Marching PE Tall Flags</option>
+                </select>
+            </form>
+        </td>
         <td> </td>
 
     </tr>
-    <tr id="electives">
-        <td>Electives- 85 credits- 5 credits/trimester</td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-        <td> </td>
-    </tr>
+
     <tr id="offrolls">
         <td>Offrolls- max of 1 per trimester, except 12th grade</td>
         <td>
@@ -566,6 +627,57 @@
 </table>
 
     <script>
+        let totalHistCredits = 0;
+        let totalEnglishCredits = 0;
+        let totalMathCredits = 0;
+        let totalLifeSciCredits = 0;
+        let totalPhysSciCredits = 0;
+        let totalLangCredit = 0;
+        let totalPECredit = 0;
+        let totalHealthCredit = 0;
+
+        let totalFreshCourses = 0;
+
+        function freshmanEnglish() {
+            var nineEnglish = document.getElementById("freshman-english");
+            console.log(nineEnglish)
+            var value = nineEnglish.options[nineEnglish.selectedIndex].value;
+            console.log("value is:" + value)
+            var nineEnglishCourse = nineEnglish.options[nineEnglish.selectedIndex].text;
+            console.log("text is:" + nineEnglishCourse)
+            var nineEnglishLen = 2
+            totalFreshCourses = totalFreshCourses + nineEnglishLen
+            totalEnglishCredits = totalEnglishCredits + nineEnglishLen
+        }
+
+        function freshmanSci() {
+            var freshSci = document.getElementById("fresh-science")
+            var freshSciCourse = freshSci.options[freshSci.selectedIndex].value
+            if ((freshSciCourse === "3") || (freshSciCourse === "4")) {
+                var freshSciLen = 3
+                totalLifeSciCredits = totalLifeSciCredits + 1
+                totalPhysSciCredits = totalPhysSciCredits + 2
+            }
+            else {
+                freshSciLen = 2
+                totalLifeSciCredits = totalLifeSciCredits + freshSciLen
+            }
+            totalFreshCourses = totalFreshCourses + freshSciLen
+        }
+
+        function freshChinese() {
+            var freshChinese = document.getElementById("fresh-chinese")
+            var freshChineseCourse = freshChinese.options[freshChinese.selectedIndex].value
+            if (freshChineseCourse === "2") {
+                var freshChineseLen = 0
+            }
+            else if (freshChineseCourse >= 3) {
+                freshChineseLen = 3
+                totalLangCredit = totalLangCredit + freshChineseLen
+            }
+            totalFreshCourses = totalFreshCourses + freshChineseLen
+        }
+
 
         let totalSophCourses = 0;
 
@@ -576,27 +688,27 @@
             var sophHistoryCourse = sophHistory.options[sophHistory.selectedIndex].value
             if (sophHistoryCourse > 2) {
                 sophHistoryLen = 3;
+                totalHistCredits = totalHistCredits + 2
+                totalElectiveCredit = totalElectiveCredit + 1
             }
             else {
                 sophHistoryLen = 2
+                totalHistCredits = totalHistCredits + 2
             }
             console.log("soph hist len: " + sophHistoryLen)
             totalSophCourses = totalSophCourses + sophHistoryLen
             console.log("total soph courses: " + totalSophCourses)
-            return totalSophCourses
         }
 
         function sophEnglish() {
             var sophEnglish = document.getElementById("soph-english")
             var sophEnglishCourse = sophEnglish.options[sophEnglish.selectedIndex].value
-            if (sophEnglishCourse === 1) {
-                var sophEngishLen = 0
+            if (sophEnglishCourse > 2) {
+                var sophEnglishLen = 2
+                totalEnglishCredits = totalEnglishCredits + 2
             }
-            else {
-                sophEngishLen = 2
-            }
-            console.log("english b4 retake: " + sophEngishLen)
-            totalSophCourses = totalSophCourses + sophEngishLen
+            console.log("english b4 retake: " + sophEnglishLen)
+            totalSophCourses = totalSophCourses + sophEnglishLen
             console.log("total with english: " + totalSophCourses)
         }
 
@@ -619,12 +731,14 @@
             var sophMathCourse = sophMath.options[sophMath.selectedIndex].value
             if (sophMathCourse === "5"){
                 var sophMathLen = 4
+                totalMathCredits = totalMathCredits + 4
             }
             else if (sophMathCourse === "1") {
                 sophMathLen = 0
             }
             else {
                 sophMathLen = 3
+                totalMathCredits = totalMathCredits + 3
             }
             console.log("soph math: " + sophMathLen)
             totalSophCourses = totalSophCourses + sophMathLen
@@ -636,12 +750,15 @@
             var sophLifeScienceCourse = sophLifeScience.options[sophLifeScience.selectedIndex].value
             if (sophLifeScienceCourse === "3") {
                 var sophLifeScienceLen = 3
+                totalLifeSciCredits = totalLifeSciCredits + 2
+                totalElectiveCredit = totalElectiveCredit + 1
             }
             else if (sophLifeScienceCourse === "1") {
                 sophLifeScienceLen = 0
             }
             else {
                 sophLifeScienceLen = 2
+                totalLifeSciCredits = totalLifeSciCredits + 2
             }
             console.log("life sci: " + sophLifeScienceLen)
             totalSophCourses = totalSophCourses + sophLifeScienceLen
@@ -653,12 +770,15 @@
             var sophPhysScienceCourse = sophPhysScience.options[sophPhysScience.selectedIndex].value
             if ((sophPhysScienceCourse === "3") || (sophPhysScienceCourse === "5") || (sophPhysScienceCourse >= "7")) {
                 var sophPhysScienceLen = 3
+                totalPhysSciCredits = totalPhysSciCredits + 2
+                totalElectiveCredit = totalElectiveCredit + 1
             }
             else if (sophPhysScienceCourse === "2") {
                 sophPhysScienceLen = 0
             }
             else {
                 sophPhysScienceLen = 2
+                totalPhysSciCredits = totalPhysSciCredits + 2
             }
             console.log("phys sci: " + sophPhysScienceLen)
             totalSophCourses = totalSophCourses + sophPhysScienceLen
@@ -666,44 +786,43 @@
 
         }
 
-        function sophCourses() {
-
-
-
-
+        function sophChinese(){
             var sophChinese = document.getElementById("soph-chinese")
             var sophChineseCourse = sophChinese.options[sophChinese.selectedIndex].value
-            if (sophChineseCourse !== 1) {
+            if (sophChineseCourse !== "2") {
                 var sophChineseLen = 3
+                if (sophChineseCourse === "6") {
+                    totalLangCredit = totalLangCredit + 2
+                    totalElectiveCredit = totalElectiveCredit + 1
+                }
+                else {
+                    totalLangCredit = totalLangCredit + 3
+                }
             }
             else {
                 sophChineseLen = 0
             }
             console.log("chinese: " + sophChineseLen)
-
-            {#check if student is taking correct number of classes#}
-            {#var totalSophCourses = sophHistoryLen + sophEngishLen + sophMathLen + sophLifeScienceLen + sophPhysScienceLen + sophChineseLen#}
-            {#console.log("total is: " + totalSophCourses)#}
-            {#if (totalSophCourses < 15){#}
-            {#    document.getElementById("soph-total").innerHTML = "You do not have enough Courses"#}
-            {#}#}
-            {#else if (totalSophCourses > 15) {#}
-            {#    document.getElementById("soph-total").innerHTML = "Can not have more than 15 classes"#}
-            {#}#}
-            {#else {#}
-            {#    document.getElementById("soph-total").innerHTML = "You have enough classes!"#}
-            {#}#}
+            totalSophCourses = totalSophCourses + sophChineseLen
+            console.log("total with chinese: " + totalSophCourses)
         }
 
-        function freshmanEnglish() {
-            var nineEnglish = document.getElementById("freshman-english");
-            console.log(nineEnglish)
-            var value = nineEnglish.options[nineEnglish.selectedIndex].value;
-            console.log("value is:" + value)
-            var nineEnglishCourse = nineEnglish.options[nineEnglish.selectedIndex].text;
-            console.log("text is:" + nineEnglishCourse)
-            var nineEnglishLen = 2
+        function sophSpanish() {
+            var sophSpanish = document.getElementById("soph-spanish")
+            var sophSpanishCourse = parseInt(sophSpanish.options[sophSpanish.selectedIndex].value)
+            console.log("type: " + typeof sophSpanishCourse + " value: " + sophSpanishCourse)
+            if (sophSpanishCourse === 2) {
+                var sophSpanishLen = 0
+            }
+            else if (sophSpanishCourse >= 7) {
+                sophSpanishLen = 3
+            }
+            else {
+                sophSpanishLen = 2
+            }
+            console.log("spanish: " + sophSpanishLen)
+            totalSophCourses = totalSophCourses + sophSpanishLen
+            console.log("total with spanish: " + totalSophCourses)
         }
-
     </script>
 {% endblock %}
