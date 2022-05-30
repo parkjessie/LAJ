@@ -9,8 +9,8 @@ def courses_all():
     return json_ready
 
 
-def courses_history():
-    table = Courses.query.filter_by(dept="SSCI")
+def courses_with_repeats(has_repeats):
+    table = Courses.query.filter_by(dept=has_repeats)
     json_ready = [course.read() for course in table]
 
     freshman = []
@@ -20,17 +20,17 @@ def courses_history():
 
     sophomore = []
     for j in json_ready:
-        if j["sophomore"] != "" and j["freshman"] == "":
+        if j["sophomore"] != "":
             sophomore.append(j)
 
     junior = []
     for j in json_ready:
-        if j["junior"] != "" and (j["freshman"] == "" and j["sophomore"] == ""):
+        if j["junior"] != "":
             junior.append(j)
 
     senior = []
     for j in json_ready:
-        if j["senior"] != "" and (j["freshman"] == "" and j["sophomore"] == "" and j["junior"] == ""):
+        if j["senior"] != "":
             senior.append(j)
     return freshman, sophomore, junior, senior
 
@@ -50,17 +50,17 @@ def courses_english(subjects):
 
         sophomore = []
         for j in json_ready:
-            if j["sophomore"] != "" and j["freshman"] == "":
+            if j["sophomore"] != "":
                 sophomore.append(j)
 
         junior = []
         for j in json_ready:
-            if j["junior"] != "" and (j["freshman"] == "" and j["sophomore"] == ""):
+            if j["junior"] != "":
                 junior.append(j)
 
         senior = []
         for j in json_ready:
-            if j["senior"] != "" and (j["freshman"] == "" and j["sophomore"] == "" and j["junior"] == ""):
+            if j["senior"] != "":
                 senior.append(j)
 
         subject_titles.append(subject)

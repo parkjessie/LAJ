@@ -43,9 +43,18 @@
                                 {{ subjects_titles[index] }}
                             </td>
                             {% for grade in subject_list %}
+                                {% set grade_index = loop.index - 1 %}
                                 <td>
                                     <form>
-                                        <select>
+                                    {% if grade_index == '0' %}
+                                        <select multiple onchange="freshman()">
+                                    {% elif grade_index == '1' %}
+                                        <select multiple onchange="sophomore()">
+                                    {% elif grade_index == '2' %}
+                                        <select multiple onchange="junior()">
+                                    {% else %}
+                                        <select multiple onchange="senior()">
+                                    {% endif %}
                                             <option value="">---Choose {{ subjects_titles[index] }}---</option>
                                             {% for course in grade %}
                                                 <option value={{ course['course_id'] }}>{{ course['course_name'] }}</option>
@@ -60,5 +69,24 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function freshman() {
+            console.log("freshman function run")
+        }
+
+        function sophomore() {
+            console.log("sophomore run")
+        }
+
+        function junior() {
+            console.log("junior")
+        }
+
+        function senior() {
+            console.log("senior/else run")
+        }
+
+    </script>
 
 {% endblock %}
