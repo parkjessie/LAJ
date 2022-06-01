@@ -83,7 +83,7 @@ def users_all():
 
 
 # SQLAlchemy extract all users from database
-def users_all_alc():
+def users_all():
     table = Users.query.all()
     json_ready = [peep.read() for peep in table]
     return json_ready
@@ -180,41 +180,3 @@ def logout():
     logout_user()  # removes login state of user from session
 
 
-# Test some queries from implementations above
-if __name__ == "__main__":
-
-    # Look at table
-    print("Print all at start")
-    for user in users_all():
-        print(user)
-    print()
-
-    """ Password Lookup Sample Code """
-    # Expected success on Email and Password lookup
-    name = "Thomas Edison"
-    email = "tedison@example.com"
-    psw = "123toby"
-    print(f"Check is_user with valid email and password {email}, {psw}", is_user(email, psw))
-
-    # Expected failure on Email and Password lookup
-    psw1 = "1234puffs"
-    print(f"Check is_user with invalid password: {email}, {psw1}", is_user(email, psw1))
-
-    """ Authorization Screen Sample Code"""
-    # Expected failure as user exists
-    print(f"Check authorize with existing email and password: {name}, {psw}", authorize(name, email, psw))
-
-    # Expected success as user does not exist
-    name1 = "Coco Puffs"
-    email1 = "puffs@example.com"
-    print(f"Check authorize with new email and password: {name1}, {psw1}", authorize(name1, email1, psw1))
-
-    # Look at table
-    print()
-    print("Print all at end")
-    for user in users_all():
-        print(user)
-
-    # Clean up data from run, so it can run over and over the same
-    user_record = user_by_email(email1)
-    user_record.delete()
