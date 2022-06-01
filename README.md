@@ -1,3 +1,4 @@
+# CODE CODE CODE OR IT'S SLASH SLASH SLASH!!!
 # LAJ
 
 ## Time box  
