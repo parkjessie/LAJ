@@ -34,7 +34,7 @@
                         <th>10th Grade</th>
                         <th>11th Grade</th>
                         <th>12th Grade</th>
-{#                        <th>Totals</th>#}
+                        <th>Totals</th>
                     </tr>
 
 
@@ -48,11 +48,10 @@
                             {% for grade in subject_list %}
                                 {% set grade_index = loop.index - 1 %}
                                 {% set grade_index_str = grade_index | string() %}
-
                                 {% set course_param = grade_index_str + subjects_titles[index] %}
                                 <td>
                                     <form>
-                                        <select multiple onchange="totals('{{ course_param }}', {{ grade_index_str}})" id="{{ course_param }}">
+                                        <select multiple onchange="totals('{{ course_param }}', {{ grade_index_str}}, {{ credits }})" id="{{ course_param }}">
                                             <option value="">---Choose {{ subjects_titles[index] }}---</option>
                                             {% for course in grade %}
                                                 <option value={{ course['course_id'] }}>{{ course['course_name'] }}</option>
@@ -60,11 +59,11 @@
                                         </select>
                                     </form>
                                 </td>
-{#                                {% if grade_index_str == '3' %}#}
-{#                                    {% set credits = subjects_titles[index] | string() %}#}
-{#                                    {% set course_param = course_param | string() %}#}
-{#                                    <td onclick="counting_totals('{{ course_param }}', '{{ credits }}')" id="{{ credits }}">hello</td>#}
-{#                                {% endif %}#}
+                                {% if grade_index_str == '3' %}
+                                    {% set credits = subjects_titles[index] | string() %}
+                                    {% set course_param = course_param | string() %}
+                                    <td onclick="totals('{{ course_param }}', {{ grade_index_str}}, '{{ credits }}')">Your total {{ subjects_titles[index] }} course(s): <span id="{{ credits }}"></span></td>
+                                {% endif %}
                             {% endfor %}
                         </tr>
                     {% endfor %}
@@ -87,112 +86,150 @@
     let totalJuniorCourses = 0
     let totalSeniorCourses = 0
 
-    function totals(course_param, grade_index_str) {
-            var access= document.getElementById(course_param).selectedOptions
-            console.log(access)
+    let totalSSCICourses = 0
+    let totalENGLCourses = 0
+    let totalMATHCourses = 0
+    let totalSCICourses = 0
+    let totalFLNGCourses = 0
+    let totalELECCourses = 0
+    let totalPECourses = 0
 
-            var values = Array.from(access).map(({ value }) => value);
-            console.log(values);
+    function totals(course_param, grade_index_str, credits) {
+        console.log("credits is: " + credits)
+        var access= document.getElementById(course_param).selectedOptions
+        console.log(access)
 
-            grade = grade_index_str
+        var values = Array.from(access).map(({ value }) => value);
+        console.log(values);
 
+        var grade = grade_index_str
 
             // if you try to unclick something, it's not subtracted from the total number of courses
-            if (grade === 0) {
-                totalFreshCourses = totalFreshCourses + values.length
-                console.log("fresh total: " + totalFreshCourses)
+        if (grade === 0) {
+            totalFreshCourses = totalFreshCourses + values.length
+            console.log("fresh total: " + totalFreshCourses)
 
-                if (totalFreshCourses < 15) {
-                    document.getElementById("fresh-total").innerHTML = "you do not have enough courses yet"
-                    document.getElementById("fresh-list").innerHTML = totalFreshCourses
-                }
-                else if (totalFreshCourses > 15) {
-                    document.getElementById("fresh-total").innerHTML = "you have too many courses"
-                    document.getElementById("fresh-list").innerHTML = totalFreshCourses
-                }
-                else {
-                    document.getElementById("fresh-total").innerHTML = "you have the right amount"
-                    document.getElementById("fresh-list").innerHTML = totalFreshCourses
-                }
+            if (totalFreshCourses < 15) {
+                document.getElementById("fresh-total").innerHTML = "you do not have enough courses yet"
+                document.getElementById("fresh-list").innerHTML = totalFreshCourses
             }
-            else if (grade === 1) {
-                totalSophCourses = totalSophCourses + values.length
-                console.log("soph total: " + totalSophCourses)
-
-                if (totalSophCourses < 15) {
-                    document.getElementById("soph-total").innerHTML = "you do not have enough courses yet"
-                    document.getElementById("soph-list").innerHTML = totalSophCourses
-                }
-                else if (totalSophCourses > 15) {
-                    document.getElementById("soph-total").innerHTML = "you have too many courses"
-                    document.getElementById("soph-list").innerHTML = totalSophCourses
-
-                }
-                else {
-                    document.getElementById("soph-total").innerHTML = "you have the right amount"
-                    document.getElementById("soph-list").innerHTML = totalSophCourses
-                }
-            }
-            else if (grade === 2) {
-                totalJuniorCourses = totalJuniorCourses +values.length
-                console.log("junior total: " + totalJuniorCourses)
-
-                if (totalJuniorCourses < 15) {
-                    document.getElementById("junior-total").innerHTML = "you do not have enough courses yet"
-                    document.getElementById("junior-list").innerHTML = totalJuniorCourses
-                }
-                else if (totalJuniorCourses > 15) {
-                    document.getElementById("junior-total").innerHTML = "you have too many courses"
-                    document.getElementById("junior-list").innerHTML = totalJuniorCourses
-                }
-                else {
-                    document.getElementById("junior-total").innerHTML = "you have the right amount"
-                    document.getElementById("junior-list").innerHTML = totalJuniorCourses
-                }
+            else if (totalFreshCourses > 15) {
+                document.getElementById("fresh-total").innerHTML = "you have too many courses"
+                document.getElementById("fresh-list").innerHTML = totalFreshCourses
             }
             else {
-                totalSeniorCourses = totalSeniorCourses + values.length
-                console.log("senior total: " + totalSeniorCourses)
+                document.getElementById("fresh-total").innerHTML = "you have the right amount"
+                document.getElementById("fresh-list").innerHTML = totalFreshCourses
+            }
+        }
+        else if (grade === 1) {
+            totalSophCourses = totalSophCourses + values.length
+            console.log("soph total: " + totalSophCourses)
 
-                if (totalSeniorCourses < 15) {
-                    document.getElementById("senior-total").innerHTML = "you do not have enough courses yet"
-                    document.getElementById("senior-list").innerHTML = totalSeniorCourses
-                }
-                else if (totalSeniorCourses > 15) {
-                    document.getElementById("senior-total").innerHTML = "you have too many courses"
-                    document.getElementById("senior-list").innerHTML = totalSeniorCourses
-                }
-                else {
-                    document.getElementById("senior-total").innerHTML = "you have the right amount"
-                    document.getElementById("senior-list").innerHTML = totalSeniorCourses
-                }
+            if (totalSophCourses < 15) {
+                document.getElementById("soph-total").innerHTML = "you do not have enough courses yet"
+                document.getElementById("soph-list").innerHTML = totalSophCourses
+            }
+            else if (totalSophCourses > 15) {
+                document.getElementById("soph-total").innerHTML = "you have too many courses"
+                document.getElementById("soph-list").innerHTML = totalSophCourses
 
             }
-            console.log("Grade is: " + grade)
+            else {
+                document.getElementById("soph-total").innerHTML = "you have the right amount"
+                document.getElementById("soph-list").innerHTML = totalSophCourses
+            }
         }
-        {##}
-        {#let totalSSCI = 0#}
-        {##}
-        {#function counting_totals(course_param, credits) {#}
-        {#    // which td to change/where totals will be#}
-        {#    var subject_total = document.getElementById(credits)#}
-        {#    console.log(subject_total)#}
-        {##}
-        {#    var access = document.getElementById(course_param).selectedOptions#}
-        {#    console.log(access)#}
-        {#    var values = Array.from(access).map(({value}) => value);#}
-        {#    console.log(values);#}
-        {##}
-        {#    var subject = course_param.substring(1)#}
-        {#    console.log(subject)#}
-        {#  }#}
-        {##}
+        else if (grade === 2) {
+            totalJuniorCourses = totalJuniorCourses +values.length
+            console.log("junior total: " + totalJuniorCourses)
 
-    // totals don't update correctly
+            if (totalJuniorCourses < 15) {
+                document.getElementById("junior-total").innerHTML = "you do not have enough courses yet"
+                document.getElementById("junior-list").innerHTML = totalJuniorCourses
+            }
+            else if (totalJuniorCourses > 15) {
+                document.getElementById("junior-total").innerHTML = "you have too many courses"
+                document.getElementById("junior-list").innerHTML = totalJuniorCourses
+            }
+            else {
+                document.getElementById("junior-total").innerHTML = "you have the right amount"
+                document.getElementById("junior-list").innerHTML = totalJuniorCourses
+            }
+        }
+        else {
+            totalSeniorCourses = totalSeniorCourses + values.length
+            console.log("senior total: " + totalSeniorCourses)
+
+            if (totalSeniorCourses < 15) {
+                document.getElementById("senior-total").innerHTML = "you do not have enough courses yet"
+                document.getElementById("senior-list").innerHTML = totalSeniorCourses
+            }
+            else if (totalSeniorCourses > 15) {
+                document.getElementById("senior-total").innerHTML = "you have too many courses"
+                document.getElementById("senior-list").innerHTML = totalSeniorCourses
+            }
+            else {
+                document.getElementById("senior-total").innerHTML = "you have the right amount"
+                document.getElementById("senior-list").innerHTML = totalSeniorCourses
+            }
+
+        }
+            console.log("Grade is: " + grade)
+
+        grade_index_str = String(grade_index_str)
+        console.log(typeof grade_index_str)
+
+        // id of td cell to update with totals
+        var subject_total = document.getElementById(grade_index_str)
+        console.log(subject_total)
+
+
+        // substring in order to iterate through and check for totals
+        var subject = course_param.substring(1)
+        console.log(subject)
+        console.log("credits" + credits)
+
+        if (subject === "SSCI") {
+            totalSSCICourses = totalSSCICourses + values.length
+            console.log("credits is: " + credits)
+            document.getElementById("SSCI").innerHTML = totalSSCICourses
+        }
+
+        if (subject === "ENGL") {
+            totalENGLCourses = totalENGLCourses + values.length
+            console.log("credits is: " + credits)
+            document.getElementById("ENGL").innerHTML = totalENGLCourses
+        }
+
+        if (subject === "MATH") {
+            totalMATHCourses = totalMATHCourses + values.length
+            document.getElementById("MATH").innerHTML = totalMATHCourses
+        }
+
+        if (subject === "SCI") {
+            totalSCICourses = totalSCICourses + values.length
+            document.getElementById("SCI").innerHTML = totalSCICourses
+        }
+
+        if (subject === "FLNG") {
+            totalFLNGCourses = totalFLNGCourses + values.length
+            document.getElementById("MATH").innerHTML = totalFLNGCourses
+        }
+
+        if (subject === "ELEC") {
+            totalELECCourses = totalELECCourses + values.length
+            document.getElementById("MATH").innerHTML = totalELECCourses
+        }
+
+        if (subject === "PE") {
+            totalPECourses = totalPECourses + values.length
+            document.getElementById("MATH").innerHTML = totalPECourses
+        }
 
 
 
-
+    }
     </script>
 
 {% endblock %}
