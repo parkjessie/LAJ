@@ -18,6 +18,7 @@
 - Database with all information on course paths (provided by sponsor)
 - Calculator for student to select courses for all 4 years, check graduation and A-G requirements
 - Include prerequisites
+- Reminders page for returning visitors to check (requires login)
 
 # Contributing/committing
 ### **PULL BEFORE YOU PUSH** (to avoid any oopie doopies)
