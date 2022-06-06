@@ -142,18 +142,18 @@ def delete():
     return redirect(url_for('crud.crud'))
 
 
-# Search Form
+"""# Search Form
 @app_crud.route('/search/')
 def search():
-    """loads form to search Users data"""
+    # loads form to search Users data
     return render_template("search.html")
 
 
 # Search request and response
 @app_crud.route('/search/term/', methods=["POST"])
 def search_term():
-    """ obtain term/search request """
+    #obtain term/search request
     req = request.get_json()
     term = req['term']
     response = make_response(jsonify(users_ilike(term)), 200)
-    return response
+    return response"""
